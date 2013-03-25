@@ -9,6 +9,7 @@
 #import "MSUListViewController.h"
 #import "MSUCompositionData.h"
 #import "MSUCarouselViewController.h"
+#import "MSUWebViewViewController.h"
 
 #define NEWS_URL @"https://api.tcsbank.ru/v1/news"              //from this link I will get data
 #define AUTOLOAD_ON_START                                       //download or not data immediately on startup
@@ -17,6 +18,7 @@
 @interface MSUListViewController ()
 @property (strong, nonatomic) NSURLConnection *urlconnection;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) MSUCompositionData *composition;
 @end
 
 @implementation MSUListViewController
@@ -83,7 +85,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     //data is in responseData, so parse it
-    NSString *testResponse = @"{\"compositions\":[{\"compositor\":\"Паганини\",\"name\":\"№ 7, ми мажор\", \"url\":\"http://nsidc.org/pubs/notes/64/Notes_64_web.pdf\"}]}";
+    NSString *testResponse = @"{\"compositions\":[{\"compositor\":\"Паганини\",\"name\":\"№ 7, ми мажор\",\"instruments\":[{\"name\":\"Гитара\",\"id\":1,\"url\":\"http://nsidc.org/pubs/notes/64/Notes_64_web.pdf\"}]}]}";
     NSString *testResponseUtf8 =  [NSString stringWithUTF8String:[testResponse UTF8String]];
     NSData *responseData = [testResponseUtf8 dataUsingEncoding: NSUTF8StringEncoding];
     self.responseData = [responseData mutableCopy];
@@ -143,7 +145,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.composition = [self.tableData objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"segueInstrument" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"segueInstrument"])
+        [segue.destinationViewController setComposition:self.composition];
+    [super prepareForSegue:segue sender:sender];
 }
 
 @end

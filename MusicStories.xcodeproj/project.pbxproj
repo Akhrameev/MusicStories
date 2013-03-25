@@ -17,11 +17,13 @@
 		DA5C146D16FF46ED002B8FAC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C146C16FF46ED002B8FAC /* Default@2x.png */; };
 		DA5C146F16FF46EE002B8FAC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C146E16FF46EE002B8FAC /* Default-568h@2x.png */; };
 		DA5C147216FF46EE002B8FAC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5C147016FF46EE002B8FAC /* MainStoryboard.storyboard */; };
-		DA5C147516FF46EE002B8FAC /* MSUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C147416FF46EE002B8FAC /* MSUViewController.m */; };
 		DA5C148216FF93BD002B8FAC /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C148116FF93BD002B8FAC /* iCarousel.m */; };
 		DA5C148516FF94AB002B8FAC /* MSUCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C148416FF94AB002B8FAC /* MSUCarouselViewController.m */; };
 		DA5C148B16FF95A2002B8FAC /* MSUListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C148A16FF95A2002B8FAC /* MSUListViewController.m */; };
 		DA5C148D16FF9787002B8FAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5C148C16FF9787002B8FAC /* QuartzCore.framework */; };
+		DA5C14901700D4DE002B8FAC /* MSUCompositionData.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C148F1700D4DE002B8FAC /* MSUCompositionData.m */; };
+		DA5C14921700EA38002B8FAC /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14911700EA38002B8FAC /* page.png */; };
+		DA5C14951700EB26002B8FAC /* MSUWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +41,6 @@
 		DA5C146C16FF46ED002B8FAC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DA5C146E16FF46EE002B8FAC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DA5C147116FF46EE002B8FAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		DA5C147316FF46EE002B8FAC /* MSUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSUViewController.h; sourceTree = "<group>"; };
-		DA5C147416FF46EE002B8FAC /* MSUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSUViewController.m; sourceTree = "<group>"; };
 		DA5C148016FF93BD002B8FAC /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		DA5C148116FF93BD002B8FAC /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		DA5C148316FF94AB002B8FAC /* MSUCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUCarouselViewController.h; sourceTree = "<group>"; };
@@ -48,6 +48,11 @@
 		DA5C148916FF95A2002B8FAC /* MSUListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSUListViewController.h; path = ../MSUListViewController.h; sourceTree = "<group>"; };
 		DA5C148A16FF95A2002B8FAC /* MSUListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSUListViewController.m; path = ../MSUListViewController.m; sourceTree = "<group>"; };
 		DA5C148C16FF9787002B8FAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DA5C148E1700D4DE002B8FAC /* MSUCompositionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUCompositionData.h; sourceTree = "<group>"; };
+		DA5C148F1700D4DE002B8FAC /* MSUCompositionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUCompositionData.m; sourceTree = "<group>"; };
+		DA5C14911700EA38002B8FAC /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
+		DA5C14931700EB26002B8FAC /* MSUWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUWebViewViewController.h; sourceTree = "<group>"; };
+		DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUWebViewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +104,15 @@
 				DA5C147F16FF93BD002B8FAC /* iCarousel */,
 				DA5C146716FF46ED002B8FAC /* MSUAppDelegate.h */,
 				DA5C146816FF46ED002B8FAC /* MSUAppDelegate.m */,
+				DA5C148E1700D4DE002B8FAC /* MSUCompositionData.h */,
+				DA5C148F1700D4DE002B8FAC /* MSUCompositionData.m */,
 				DA5C148916FF95A2002B8FAC /* MSUListViewController.h */,
 				DA5C148A16FF95A2002B8FAC /* MSUListViewController.m */,
 				DA5C147016FF46EE002B8FAC /* MainStoryboard.storyboard */,
 				DA5C148316FF94AB002B8FAC /* MSUCarouselViewController.h */,
 				DA5C148416FF94AB002B8FAC /* MSUCarouselViewController.m */,
-				DA5C147316FF46EE002B8FAC /* MSUViewController.h */,
-				DA5C147416FF46EE002B8FAC /* MSUViewController.m */,
+				DA5C14931700EB26002B8FAC /* MSUWebViewViewController.h */,
+				DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */,
 				DA5C145F16FF46ED002B8FAC /* Supporting Files */,
 			);
 			path = MusicStories;
@@ -116,6 +123,7 @@
 			children = (
 				DA5C146016FF46ED002B8FAC /* MusicStories-Info.plist */,
 				DA5C146116FF46ED002B8FAC /* InfoPlist.strings */,
+				DA5C14911700EA38002B8FAC /* page.png */,
 				DA5C146416FF46ED002B8FAC /* main.m */,
 				DA5C146616FF46ED002B8FAC /* MusicStories-Prefix.pch */,
 				DA5C146A16FF46ED002B8FAC /* Default.png */,
@@ -199,6 +207,7 @@
 				DA5C146D16FF46ED002B8FAC /* Default@2x.png in Resources */,
 				DA5C146F16FF46EE002B8FAC /* Default-568h@2x.png in Resources */,
 				DA5C147216FF46EE002B8FAC /* MainStoryboard.storyboard in Resources */,
+				DA5C14921700EA38002B8FAC /* page.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,10 +220,11 @@
 			files = (
 				DA5C146516FF46ED002B8FAC /* main.m in Sources */,
 				DA5C146916FF46ED002B8FAC /* MSUAppDelegate.m in Sources */,
-				DA5C147516FF46EE002B8FAC /* MSUViewController.m in Sources */,
 				DA5C148216FF93BD002B8FAC /* iCarousel.m in Sources */,
 				DA5C148516FF94AB002B8FAC /* MSUCarouselViewController.m in Sources */,
 				DA5C148B16FF95A2002B8FAC /* MSUListViewController.m in Sources */,
+				DA5C14901700D4DE002B8FAC /* MSUCompositionData.m in Sources */,
+				DA5C14951700EB26002B8FAC /* MSUWebViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

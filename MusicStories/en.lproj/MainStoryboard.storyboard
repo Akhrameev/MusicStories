@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJk-U3-NoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="499" y="-1386"/>
+            <point key="canvasLocation" x="471" y="-182"/>
         </scene>
         <!--Carousel View Controller-->
         <scene sceneID="ruo-eg-8sR">
@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="1533" y="-182"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View View Controller-->
         <scene sceneID="K6f-JJ-Xoe">
             <objects>
-                <viewController id="ZcS-Ek-iM0" sceneMemberID="viewController">
+                <viewController id="ZcS-Ek-iM0" customClass="MSUWebViewViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xcz-Rb-Nfn">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,12 +131,49 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="erV-PV-NtJ"/>
+                    <connections>
+                        <outlet property="webView" destination="ABp-xB-emr" id="rLX-iu-N4H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCD-Cu-qQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2582" y="-182"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MSUCarouselViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSUCarouselViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
+            </relationships>
+        </class>
+        <class className="MSUListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSUListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshView:" candidateClass="UIRefreshControl"/>
+                <relationship kind="outlet" name="table" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MSUWebViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSUWebViewViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
+        </class>
+        <class className="iCarousel" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataSource"/>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

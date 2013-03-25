@@ -11,8 +11,8 @@
 @interface MSUCompositionData : NSObject
 @property (strong, nonatomic) NSString  *compositor;
 @property (strong, nonatomic) NSString  *name;
-@property (strong, nonatomic) NSString  *url;
 @property (strong, nonatomic) NSArray   *instruments;
+@property (strong, nonatomic) NSNumber  *instrumentNo;
 + (MSUCompositionData *) initWithDictianary: (NSDictionary *) dictianary;     //method to parse NSDictionary, got from server
 
 @end

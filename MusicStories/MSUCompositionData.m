@@ -11,7 +11,7 @@
 @implementation MSUCompositionData
 @synthesize compositor;
 @synthesize name;
-@synthesize url;
+@synthesize instruments;
 
 + (MSUCompositionData *) initWithDictianary: (NSDictionary *) dictianary
 {
@@ -22,9 +22,9 @@
     temp = [dictianary objectForKey:@"name"];
     if (temp)
         [composition setName:temp];
-    temp = [dictianary objectForKey:@"url"];
+    temp = [dictianary objectForKey:@"instruments"];
     if (temp)
-        [composition setUrl:temp];
+        [composition setInstruments:temp];
     return composition;
 }
 @end
