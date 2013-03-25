@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
+#import "MSUCompositionData.h"
 
 @interface MSUCarouselViewController : UIViewController
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
-
+@property (weak, nonatomic) MSUCompositionData *composition;
 @end
