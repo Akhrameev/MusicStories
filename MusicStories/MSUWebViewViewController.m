@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[self.composition.instruments objectAtIndex:self.composition.instrumentNo.integerValue]]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[[self.composition.instruments objectAtIndex:self.composition.instrumentNo.integerValue] objectForKey:@"url"]]]];
 	// Do any additional setup after loading the view.
 }
 

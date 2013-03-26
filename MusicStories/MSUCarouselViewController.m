@@ -31,7 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.carousel.type = iCarouselTypeWheel;
+    self.carousel.type = iCarouselTypeRotary;
+    [self.carousel setCenterItemWhenSelected:YES];
 	// Do any additional setup after loading the view.
 }
 
@@ -65,10 +66,13 @@
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
         ((UIImageView *)view).image = [UIImage imageNamed:@"page.png"];
         view.contentMode = UIViewContentModeCenter;
-        label = [[UILabel alloc] initWithFrame:view.bounds];
+        CGRect frame = view.bounds;
+        frame.origin.y = frame.origin.y + frame.size.height;
+        frame.size.height = 50;
+        label = [[UILabel alloc] initWithFrame:frame];
         label.backgroundColor = [UIColor clearColor];
         label.textAlignment = UITextAlignmentCenter;
-        label.font = [label.font fontWithSize:50];
+        label.font = [label.font fontWithSize:20];
         label.tag = 1;
         [view addSubview:label];
     }
@@ -77,15 +81,35 @@
         //get a reference to the label in the recycled view
         label = (UILabel *)[view viewWithTag:1];
     }
-    
+    [((UIImageView *)view) setImage:[UIImage imageNamed:[self getPathForInstrumentPic: [[[self.composition.instruments objectAtIndex:index] objectForKey:@"id"] integerValue]]]];
     //set item label
     //remember to always set any properties of your carousel item
     //views outside of the `if (view == nil) {...}` check otherwise
     //you'll get weird issues with carousel item content appearing
     //in the wrong place in the carousel
     label.text = [[self.composition.instruments objectAtIndex:index] objectForKey:@"name"];
-    
     return view;
+}
+
+- (NSString *) getPathForInstrumentPic : (NSUInteger) id
+{
+    NSArray *array = @[@"music_instruments.png", @"violin.png", @"viola.png"];
+    if (id >= [array count])
+        id = 0;
+    return [array objectAtIndex:id];
+}
+
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    [self.composition setInstrumentNo:@(index)];
+    [self performSegueWithIdentifier:@"segueNotes" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"segueNotes"])
+        [segue.destinationViewController setComposition:self.composition];
+    [super prepareForSegue:segue sender:sender];
 }
 
 @end

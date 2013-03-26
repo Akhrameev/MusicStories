@@ -11,7 +11,8 @@
 #import "MSUCarouselViewController.h"
 #import "MSUWebViewViewController.h"
 
-#define NEWS_URL @"https://api.tcsbank.ru/v1/news"              //from this link I will get data
+//#define NEWS_URL @"https://api.tcsbank.ru/v1/news"              //from this link I will get data
+#define NEWS_URL @"https://s3.amazonaws.com/MusicNotes/config.txt"
 #define AUTOLOAD_ON_START                                       //download or not data immediately on startup
 
 
@@ -85,10 +86,10 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     //data is in responseData, so parse it
-    NSString *testResponse = @"{\"compositions\":[{\"compositor\":\"Паганини\",\"name\":\"№ 7, ми мажор\",\"instruments\":[{\"name\":\"Гитара\",\"id\":1,\"url\":\"http://nsidc.org/pubs/notes/64/Notes_64_web.pdf\"}]}]}";
+    /*NSString *testResponse = @"{\"compositions\":[{\"compositor\":\"Паганини\",\"name\":\"№ 7, ми мажор\",\"instruments\":[{\"name\":\"Гитара\",\"id\":1,\"url\":\"http://nsidc.org/pubs/notes/64/Notes_64_web.pdf\"}]}]}";
     NSString *testResponseUtf8 =  [NSString stringWithUTF8String:[testResponse UTF8String]];
     NSData *responseData = [testResponseUtf8 dataUsingEncoding: NSUTF8StringEncoding];
-    self.responseData = [responseData mutableCopy];
+    self.responseData = [responseData mutableCopy];*/
     NSError *myError = nil;
     NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
     if (myError)

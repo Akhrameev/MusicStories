@@ -24,6 +24,9 @@
 		DA5C14901700D4DE002B8FAC /* MSUCompositionData.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C148F1700D4DE002B8FAC /* MSUCompositionData.m */; };
 		DA5C14921700EA38002B8FAC /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14911700EA38002B8FAC /* page.png */; };
 		DA5C14951700EB26002B8FAC /* MSUWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */; };
+		DA5C14A0170214D7002B8FAC /* viola.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C149E170214D7002B8FAC /* viola.png */; };
+		DA5C14A1170214D7002B8FAC /* violin.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C149F170214D7002B8FAC /* violin.png */; };
+		DA5C14A317021725002B8FAC /* music_instruments.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A217021725002B8FAC /* music_instruments.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		DA5C14911700EA38002B8FAC /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		DA5C14931700EB26002B8FAC /* MSUWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUWebViewViewController.h; sourceTree = "<group>"; };
 		DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUWebViewViewController.m; sourceTree = "<group>"; };
+		DA5C149E170214D7002B8FAC /* viola.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viola.png; sourceTree = "<group>"; };
+		DA5C149F170214D7002B8FAC /* violin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = violin.png; sourceTree = "<group>"; };
+		DA5C14A217021725002B8FAC /* music_instruments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_instruments.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,9 @@
 				DA5C146A16FF46ED002B8FAC /* Default.png */,
 				DA5C146C16FF46ED002B8FAC /* Default@2x.png */,
 				DA5C146E16FF46EE002B8FAC /* Default-568h@2x.png */,
+				DA5C149E170214D7002B8FAC /* viola.png */,
+				DA5C149F170214D7002B8FAC /* violin.png */,
+				DA5C14A217021725002B8FAC /* music_instruments.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -208,6 +217,9 @@
 				DA5C146F16FF46EE002B8FAC /* Default-568h@2x.png in Resources */,
 				DA5C147216FF46EE002B8FAC /* MainStoryboard.storyboard in Resources */,
 				DA5C14921700EA38002B8FAC /* page.png in Resources */,
+				DA5C14A0170214D7002B8FAC /* viola.png in Resources */,
+				DA5C14A1170214D7002B8FAC /* violin.png in Resources */,
+				DA5C14A317021725002B8FAC /* music_instruments.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
