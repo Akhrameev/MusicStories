@@ -27,6 +27,8 @@
 		DA5C14AA17023B87002B8FAC /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A617023B87002B8FAC /* page.png */; };
 		DA5C14AB17023B87002B8FAC /* viola.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A717023B87002B8FAC /* viola.png */; };
 		DA5C14AC17023B87002B8FAC /* violin.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A817023B87002B8FAC /* violin.png */; };
+		DA5C14B51704C008002B8FAC /* MS-72.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14B41704C008002B8FAC /* MS-72.png */; };
+		DA5C14B71704C013002B8FAC /* MS-144.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14B61704C013002B8FAC /* MS-144.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		DA5C14A617023B87002B8FAC /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		DA5C14A717023B87002B8FAC /* viola.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viola.png; sourceTree = "<group>"; };
 		DA5C14A817023B87002B8FAC /* violin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = violin.png; sourceTree = "<group>"; };
+		DA5C14B41704C008002B8FAC /* MS-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MS-72.png"; sourceTree = "<group>"; };
+		DA5C14B61704C013002B8FAC /* MS-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MS-144.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		DA5C144C16FF46ED002B8FAC = {
 			isa = PBXGroup;
 			children = (
+				DA5C14B61704C013002B8FAC /* MS-144.png */,
+				DA5C14B41704C008002B8FAC /* MS-72.png */,
 				DA5C147B16FF48E4002B8FAC /* Components */,
 				DA5C145716FF46ED002B8FAC /* Frameworks */,
 				DA5C145616FF46ED002B8FAC /* Products */,
@@ -220,6 +226,8 @@
 				DA5C14AA17023B87002B8FAC /* page.png in Resources */,
 				DA5C14AB17023B87002B8FAC /* viola.png in Resources */,
 				DA5C14AC17023B87002B8FAC /* violin.png in Resources */,
+				DA5C14B51704C008002B8FAC /* MS-72.png in Resources */,
+				DA5C14B71704C013002B8FAC /* MS-144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
