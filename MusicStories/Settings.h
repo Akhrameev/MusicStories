@@ -13,7 +13,7 @@
 
 @interface Settings : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * lastUpdate;
-@property (nonatomic, retain) Instrument *linkLastOpened;
+@property (nonatomic, retain) NSNumber *lastOpened;
+@property (nonatomic, retain) NSNumber *lastUpdate;
 
 @end

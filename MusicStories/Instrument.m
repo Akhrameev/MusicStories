@@ -12,6 +12,7 @@
 
 @implementation Instrument
 
+@dynamic id;
 @dynamic name;
 @dynamic url;
 @dynamic pic;

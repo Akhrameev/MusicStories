@@ -7,19 +7,24 @@
 //
 
 #import "MSUListViewController.h"
-#import "MSUCompositionData.h"
+#import "Compositor+Ext.h"
+#import "Composition+Ext.h"
+#import "Settings+Ext.h"
 #import "MSUCarouselViewController.h"
 #import "MSUWebViewViewController.h"
 
 //#define NEWS_URL @"https://api.tcsbank.ru/v1/news"              //from this link I will get data
-#define NEWS_URL @"https://s3.amazonaws.com/MusicNotes/config_rus.txt"
+#define NEWS_URL @"https://s3.amazonaws.com/MusicNotes/config.json"
+#define DATE_URL @"https://s3.amazonaws.com/MusicNotes/date.txt"
 #define AUTOLOAD_ON_START                                       //download or not data immediately on startup
-
 
 @interface MSUListViewController ()
 @property (strong, nonatomic) NSURLConnection *urlconnection;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-@property (weak, nonatomic) MSUCompositionData *composition;
+@property (weak, nonatomic) Composition *composition;
+@property (strong, nonatomic) NSArray *compositors;
+@property (strong, nonatomic) Compositor *targetCompositor;
+@property (strong, nonatomic) NSArray *targetCompositorCompositions;
 @end
 
 @implementation MSUListViewController
@@ -40,10 +45,21 @@
         [self.table addSubview:self.refreshControl];
     }
     [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
+
+    if (![self.compositors count])
+        [self updateCompositors];
 #ifdef AUTOLOAD_ON_START
-    [self.refreshControl beginRefreshing];
-    [self refreshView: self.refreshControl];
+    if (![self.compositors count])
+    {
+        [self.refreshControl beginRefreshing];
+        [self refreshView: self.refreshControl];
+    }
 #endif
+}
+
+- (void) updateCompositors
+{
+    self.compositors = [Compositor MR_findAllSortedBy:@"name" ascending:YES];
 }
 
 - (IBAction)refreshView:(UIRefreshControl *)refresh;
@@ -86,9 +102,9 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     //data is in responseData, so parse it
-    NSString *temp_str = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    temp_str = [self stringByDecodingHTMLEntitiesInString:temp_str];
-    self.responseData = [[temp_str dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
+    //NSString *temp_str = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
+    //temp_str = [self stringByDecodingHTMLEntitiesInString:temp_str];
+    //self.responseData = [[temp_str dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
     NSError *myError = nil;
     NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
     if (myError)
@@ -96,21 +112,27 @@
         //alert user about parse error and stop visualizing refreshing
         [self.refreshControl endRefreshing];
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Parse error" message:[myError description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [self.refreshControl endRefreshing];
+
         [alert show];
         return;
     }
-    NSArray *compositions = [res objectForKey:@"compositions"];
-    //enter root element, then make a loop of its elements
-    NSMutableArray *compositionsMutable = [NSMutableArray array];
-    for (NSDictionary *item in compositions)
+    NSNumber *date = [res objectForKey:@"date"];
+    [[Settings settings] setLastUpdate:date];
+    NSArray *compositors = [res objectForKey:@"compositors"];
+    if (![self.compositors count])
+        [self updateCompositors];
+    for (Compositor *compositor in self.compositors)
+        [compositor deleteWithChilds];
+    NSMutableArray *compositorsMutable = [NSMutableArray array];
+    for (NSDictionary *item in compositors)
     {
-        MSUCompositionData *composition = [MSUCompositionData initWithDictianary:item];
-        [compositionsMutable addObject:composition];
+        Compositor *compositor = [Compositor syncFromDict:item];
+        [compositorsMutable addObject:compositor];
     }
-    self.tableData = compositionsMutable;
+    self.compositors = compositorsMutable;
     [self.table reloadData];
     [self.refreshControl endRefreshing];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -126,26 +148,43 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [self.compositors count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellComposition" forIndexPath:indexPath];
-    MSUCompositionData *composition = [self.tableData objectAtIndex:indexPath.row];
-    cell.textLabel.text = composition.compositor;
-    cell.detailTextLabel.text = composition.name;
+    Compositor *compositor = [self.compositors objectAtIndex:indexPath.section];
+    if (![compositor isEqual:self.targetCompositor] || !self.targetCompositorCompositions)
+    {
+        self.targetCompositor = compositor;
+        self.targetCompositorCompositions = [compositor.listCompositions sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+    }
+    Composition *composition = [self.targetCompositorCompositions objectAtIndex:indexPath.row];
+    //cell.detailTextLabel.text = compositor.name;
+    cell.textLabel.text = composition.name;
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [[self.compositors objectAtIndex:section] name];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.tableData count];
+    return [[[self.compositors objectAtIndex:section] listCompositions] count];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.composition = [self.tableData objectAtIndex:indexPath.row];
+    Compositor *compositor = [self.compositors objectAtIndex:indexPath.section];
+    if (![compositor isEqual:self.targetCompositor] || !self.targetCompositorCompositions)
+    {
+        self.targetCompositor = compositor;
+        self.targetCompositorCompositions = [compositor.listCompositions sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+    }
+    self.composition = [self.targetCompositorCompositions objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"segueInstrument" sender:self];
 }
 

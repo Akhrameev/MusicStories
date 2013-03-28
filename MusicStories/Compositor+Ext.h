@@ -8,6 +8,7 @@
 
 #import "Compositor.h"
 
-@interface Compositor_Ext : Compositor
-
+@interface Compositor (Ext)
++ (Compositor *) syncFromDict:(NSDictionary *)dict;
+- (void) deleteWithChilds;
 @end

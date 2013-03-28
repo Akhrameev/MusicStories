@@ -7,8 +7,11 @@
 //
 
 #import "MSUCarouselViewController.h"
+#import "Instrument+Ext.h"
 
 @interface MSUCarouselViewController ()
+@property (nonatomic, strong) NSArray *arrayInstruments;
+@property (nonatomic, strong) Instrument *instrument;
 @end
 
 @implementation MSUCarouselViewController
@@ -33,9 +36,15 @@
     [super viewDidLoad];
     self.carousel.type = iCarouselTypeRotary;
     [self.carousel setCenterItemWhenSelected:YES];
+    if (!self.arrayInstruments)
+        [self updateArrayInstruments];
 	// Do any additional setup after loading the view.
 }
 
+- (void) updateArrayInstruments
+{
+    self.arrayInstruments = [self.composition.listInstuments sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -53,7 +62,9 @@
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
     //return the total number of items in the carousel
-    return [self.composition.instruments count];
+    if (!self.arrayInstruments)
+        [self updateArrayInstruments];
+    return [self.arrayInstruments count];
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
@@ -81,13 +92,14 @@
         //get a reference to the label in the recycled view
         label = (UILabel *)[view viewWithTag:1];
     }
-    [((UIImageView *)view) setImage:[UIImage imageNamed:[self getPathForInstrumentPic: [[[self.composition.instruments objectAtIndex:index] objectForKey:@"id"] integerValue]]]];
+    Instrument *instrument = [self.arrayInstruments objectAtIndex:index];
+    [((UIImageView *)view) setImage:[UIImage imageNamed:[self getPathForInstrumentPic: instrument.pic.integerValue]]];
     //set item label
     //remember to always set any properties of your carousel item
     //views outside of the `if (view == nil) {...}` check otherwise
     //you'll get weird issues with carousel item content appearing
     //in the wrong place in the carousel
-    label.text = [[self.composition.instruments objectAtIndex:index] objectForKey:@"name"];
+    label.text = instrument.name;
     return view;
 }
 
@@ -101,14 +113,14 @@
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
-    [self.composition setInstrumentNo:@(index)];
+    self.instrument = [self.arrayInstruments objectAtIndex:index];
     [self performSegueWithIdentifier:@"segueNotes" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"segueNotes"])
-        [segue.destinationViewController setComposition:self.composition];
+        [segue.destinationViewController setInstrument:self.instrument];
     [super prepareForSegue:segue sender:sender];
 }
 

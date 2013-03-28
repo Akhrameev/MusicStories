@@ -21,7 +21,6 @@
 		DA5C148516FF94AB002B8FAC /* MSUCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C148416FF94AB002B8FAC /* MSUCarouselViewController.m */; };
 		DA5C148B16FF95A2002B8FAC /* MSUListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C148A16FF95A2002B8FAC /* MSUListViewController.m */; };
 		DA5C148D16FF9787002B8FAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5C148C16FF9787002B8FAC /* QuartzCore.framework */; };
-		DA5C14901700D4DE002B8FAC /* MSUCompositionData.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C148F1700D4DE002B8FAC /* MSUCompositionData.m */; };
 		DA5C14951700EB26002B8FAC /* MSUWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */; };
 		DA5C14A917023B87002B8FAC /* music_instruments.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A517023B87002B8FAC /* music_instruments.png */; };
 		DA5C14AA17023B87002B8FAC /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A617023B87002B8FAC /* page.png */; };
@@ -56,6 +55,15 @@
 		DA5C16AF1704C3BB002B8FAC /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16921704C3BB002B8FAC /* MagicalRecord+ShorthandSupport.m */; };
 		DA5C16B01704C3BB002B8FAC /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16941704C3BB002B8FAC /* MagicalRecord.m */; };
 		DA5C16B21704C3EF002B8FAC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5C16B11704C3EE002B8FAC /* CoreData.framework */; };
+		DA5C16B51704C491002B8FAC /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16B31704C490002B8FAC /* DataModel.xcdatamodeld */; };
+		DA5C16B81704C8FF002B8FAC /* Composition.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16B71704C8FE002B8FAC /* Composition.m */; };
+		DA5C16BC1704C93D002B8FAC /* Compositor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16BB1704C93D002B8FAC /* Compositor.m */; };
+		DA5C16BF1704C967002B8FAC /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16BE1704C966002B8FAC /* Instrument.m */; };
+		DA5C16C21704C98B002B8FAC /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16C11704C989002B8FAC /* Settings.m */; };
+		DA5C16C61704C9C5002B8FAC /* Compositor+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16C51704C9C5002B8FAC /* Compositor+Ext.m */; };
+		DA5C16C91704C9DF002B8FAC /* Composition+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16C81704C9DF002B8FAC /* Composition+Ext.m */; };
+		DA5C16CC1704C9F6002B8FAC /* Instrument+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16CB1704C9F6002B8FAC /* Instrument+Ext.m */; };
+		DA5C16CF1704CA0D002B8FAC /* Settings+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16CE1704CA0D002B8FAC /* Settings+Ext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,8 +88,6 @@
 		DA5C148916FF95A2002B8FAC /* MSUListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSUListViewController.h; path = ../MSUListViewController.h; sourceTree = "<group>"; };
 		DA5C148A16FF95A2002B8FAC /* MSUListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSUListViewController.m; path = ../MSUListViewController.m; sourceTree = "<group>"; };
 		DA5C148C16FF9787002B8FAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		DA5C148E1700D4DE002B8FAC /* MSUCompositionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUCompositionData.h; sourceTree = "<group>"; };
-		DA5C148F1700D4DE002B8FAC /* MSUCompositionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUCompositionData.m; sourceTree = "<group>"; };
 		DA5C14931700EB26002B8FAC /* MSUWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUWebViewViewController.h; sourceTree = "<group>"; };
 		DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUWebViewViewController.m; sourceTree = "<group>"; };
 		DA5C14A517023B87002B8FAC /* music_instruments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_instruments.png; sourceTree = "<group>"; };
@@ -145,6 +151,23 @@
 		DA5C16951704C3BB002B8FAC /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		DA5C16961704C3BB002B8FAC /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		DA5C16B11704C3EE002B8FAC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DA5C16B41704C491002B8FAC /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		DA5C16B61704C8FD002B8FAC /* Composition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Composition.h; sourceTree = "<group>"; };
+		DA5C16B71704C8FE002B8FAC /* Composition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Composition.m; sourceTree = "<group>"; };
+		DA5C16BA1704C93D002B8FAC /* Compositor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Compositor.h; path = ../Compositor.h; sourceTree = "<group>"; };
+		DA5C16BB1704C93D002B8FAC /* Compositor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Compositor.m; path = ../Compositor.m; sourceTree = "<group>"; };
+		DA5C16BD1704C964002B8FAC /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
+		DA5C16BE1704C966002B8FAC /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
+		DA5C16C01704C988002B8FAC /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		DA5C16C11704C989002B8FAC /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		DA5C16C41704C9C5002B8FAC /* Compositor+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Compositor+Ext.h"; sourceTree = "<group>"; };
+		DA5C16C51704C9C5002B8FAC /* Compositor+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Compositor+Ext.m"; sourceTree = "<group>"; };
+		DA5C16C71704C9DF002B8FAC /* Composition+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Composition+Ext.h"; sourceTree = "<group>"; };
+		DA5C16C81704C9DF002B8FAC /* Composition+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Composition+Ext.m"; sourceTree = "<group>"; };
+		DA5C16CA1704C9F6002B8FAC /* Instrument+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Instrument+Ext.h"; sourceTree = "<group>"; };
+		DA5C16CB1704C9F6002B8FAC /* Instrument+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Instrument+Ext.m"; sourceTree = "<group>"; };
+		DA5C16CD1704CA0C002B8FAC /* Settings+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Settings+Ext.h"; sourceTree = "<group>"; };
+		DA5C16CE1704CA0D002B8FAC /* Settings+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Settings+Ext.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,11 +218,11 @@
 		DA5C145E16FF46ED002B8FAC /* MusicStories */ = {
 			isa = PBXGroup;
 			children = (
+				DA5C16C31704C996002B8FAC /* Entities+Ext */,
+				DA5C16B91704C910002B8FAC /* Entities */,
 				DA5C147F16FF93BD002B8FAC /* iCarousel */,
 				DA5C146716FF46ED002B8FAC /* MSUAppDelegate.h */,
 				DA5C146816FF46ED002B8FAC /* MSUAppDelegate.m */,
-				DA5C148E1700D4DE002B8FAC /* MSUCompositionData.h */,
-				DA5C148F1700D4DE002B8FAC /* MSUCompositionData.m */,
 				DA5C148916FF95A2002B8FAC /* MSUListViewController.h */,
 				DA5C148A16FF95A2002B8FAC /* MSUListViewController.m */,
 				DA5C148316FF94AB002B8FAC /* MSUCarouselViewController.h */,
@@ -207,6 +230,7 @@
 				DA5C14931700EB26002B8FAC /* MSUWebViewViewController.h */,
 				DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */,
 				DA5C147016FF46EE002B8FAC /* MainStoryboard.storyboard */,
+				DA5C16B31704C490002B8FAC /* DataModel.xcdatamodeld */,
 				DA5C145F16FF46ED002B8FAC /* Supporting Files */,
 			);
 			path = MusicStories;
@@ -351,6 +375,36 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		DA5C16B91704C910002B8FAC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				DA5C16B61704C8FD002B8FAC /* Composition.h */,
+				DA5C16B71704C8FE002B8FAC /* Composition.m */,
+				DA5C16BA1704C93D002B8FAC /* Compositor.h */,
+				DA5C16BB1704C93D002B8FAC /* Compositor.m */,
+				DA5C16BD1704C964002B8FAC /* Instrument.h */,
+				DA5C16BE1704C966002B8FAC /* Instrument.m */,
+				DA5C16C01704C988002B8FAC /* Settings.h */,
+				DA5C16C11704C989002B8FAC /* Settings.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		DA5C16C31704C996002B8FAC /* Entities+Ext */ = {
+			isa = PBXGroup;
+			children = (
+				DA5C16C41704C9C5002B8FAC /* Compositor+Ext.h */,
+				DA5C16C51704C9C5002B8FAC /* Compositor+Ext.m */,
+				DA5C16C71704C9DF002B8FAC /* Composition+Ext.h */,
+				DA5C16C81704C9DF002B8FAC /* Composition+Ext.m */,
+				DA5C16CA1704C9F6002B8FAC /* Instrument+Ext.h */,
+				DA5C16CB1704C9F6002B8FAC /* Instrument+Ext.m */,
+				DA5C16CD1704CA0C002B8FAC /* Settings+Ext.h */,
+				DA5C16CE1704CA0D002B8FAC /* Settings+Ext.m */,
+			);
+			name = "Entities+Ext";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,7 +483,6 @@
 				DA5C148216FF93BD002B8FAC /* iCarousel.m in Sources */,
 				DA5C148516FF94AB002B8FAC /* MSUCarouselViewController.m in Sources */,
 				DA5C148B16FF95A2002B8FAC /* MSUListViewController.m in Sources */,
-				DA5C14901700D4DE002B8FAC /* MSUCompositionData.m in Sources */,
 				DA5C14951700EB26002B8FAC /* MSUWebViewViewController.m in Sources */,
 				DA5C16971704C3BB002B8FAC /* MagicalImportFunctions.m in Sources */,
 				DA5C16981704C3BB002B8FAC /* NSAttributeDescription+MagicalDataImport.m in Sources */,
@@ -457,6 +510,15 @@
 				DA5C16AE1704C3BB002B8FAC /* MagicalRecord+Setup.m in Sources */,
 				DA5C16AF1704C3BB002B8FAC /* MagicalRecord+ShorthandSupport.m in Sources */,
 				DA5C16B01704C3BB002B8FAC /* MagicalRecord.m in Sources */,
+				DA5C16B51704C491002B8FAC /* DataModel.xcdatamodeld in Sources */,
+				DA5C16B81704C8FF002B8FAC /* Composition.m in Sources */,
+				DA5C16BC1704C93D002B8FAC /* Compositor.m in Sources */,
+				DA5C16BF1704C967002B8FAC /* Instrument.m in Sources */,
+				DA5C16C21704C98B002B8FAC /* Settings.m in Sources */,
+				DA5C16C61704C9C5002B8FAC /* Compositor+Ext.m in Sources */,
+				DA5C16C91704C9DF002B8FAC /* Composition+Ext.m in Sources */,
+				DA5C16CC1704C9F6002B8FAC /* Instrument+Ext.m in Sources */,
+				DA5C16CF1704CA0D002B8FAC /* Settings+Ext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +668,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DA5C16B31704C490002B8FAC /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA5C16B41704C491002B8FAC /* DataModel.xcdatamodel */,
+			);
+			currentVersion = DA5C16B41704C491002B8FAC /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DA5C144D16FF46ED002B8FAC /* Project object */;
 }

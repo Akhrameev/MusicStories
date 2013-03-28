@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="DataModel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Composition" representedClassName="Composition" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="linkCompositor" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Compositor" inverseName="listCompositions" inverseEntity="Compositor" syncable="YES"/>
+        <relationship name="listInstuments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Instrument" inverseName="linkComposition" inverseEntity="Instrument" syncable="YES"/>
+    </entity>
+    <entity name="Compositor" representedClassName="Compositor" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="listCompositions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Composition" inverseName="linkCompositor" inverseEntity="Composition" syncable="YES"/>
+    </entity>
+    <entity name="Instrument" representedClassName="Instrument" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pic" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="linkComposition" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Composition" inverseName="listInstuments" inverseEntity="Composition" syncable="YES"/>
+    </entity>
+    <entity name="Settings" representedClassName="Settings" syncable="YES">
+        <attribute name="lastOpened" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastUpdate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Compositor" positionX="-99" positionY="-450" width="128" height="73"/>
+        <element name="Composition" positionX="-351" positionY="-276" width="128" height="88"/>
+        <element name="Instrument" positionX="-81" positionY="-99" width="128" height="118"/>
+        <element name="Settings" positionX="-117" positionY="86" width="128" height="43"/>
+    </elements>
 </model>

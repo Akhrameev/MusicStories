@@ -8,6 +8,7 @@
 
 #import "Composition.h"
 
-@interface Composition_Ext : Composition
-
+@interface Composition (Ext)
++ (Composition *) syncFromDict: (NSDictionary *) dict;
+- (void) deleteWithChilds;
 @end

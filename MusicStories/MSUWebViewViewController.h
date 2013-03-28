@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MSUCompositionData.h"
+#import "Instrument+Ext.h"
 
 @interface MSUWebViewViewController : UIViewController <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (weak, nonatomic) MSUCompositionData *composition;
+@property (weak, nonatomic) Instrument *instrument;
 @end

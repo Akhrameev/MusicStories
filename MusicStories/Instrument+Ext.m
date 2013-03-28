@@ -8,6 +8,22 @@
 
 #import "Instrument+Ext.h"
 
-@implementation Instrument_Ext
-
+@implementation Instrument (Ext)
++ (Instrument *) syncFromDict: (NSDictionary *) dict
+{
+    if (!dict || ![dict count])
+        return nil;
+    Instrument *instrument = [Instrument MR_createEntity];
+    instrument.url = [dict objectForKey:@"url"];
+    instrument.name = [dict objectForKey:@"name"];
+    instrument.pic = [dict objectForKey:@"pic"];
+    instrument.id = [dict objectForKey:@"id"];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+    return instrument;
+}
+- (void) deleteWithChilds
+{
+    [self MR_deleteEntity];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+}
 @end

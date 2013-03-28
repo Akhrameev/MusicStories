@@ -8,6 +8,7 @@
 
 #import "Instrument.h"
 
-@interface Instrument_Ext : Instrument
-
+@interface Instrument (Ext)
++ (Instrument *) syncFromDict: (NSDictionary *) dict;
+- (void) deleteWithChilds;
 @end

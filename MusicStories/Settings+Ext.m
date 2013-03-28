@@ -8,6 +8,15 @@
 
 #import "Settings+Ext.h"
 
-@implementation Settings_Ext
-
+@implementation Settings (Ext)
++ (Settings *) settings
+{
+    Settings * settings = [Settings MR_findFirst];
+    if (!settings)
+    {
+        settings = [Settings MR_createEntity];
+        [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+    }
+    return settings;
+}
 @end

@@ -7,12 +7,11 @@
 //
 
 #import "Settings.h"
-#import "Instrument.h"
 
 
 @implementation Settings
 
+@dynamic lastOpened;
 @dynamic lastUpdate;
-@dynamic linkLastOpened;
 
 @end

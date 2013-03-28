@@ -8,6 +8,6 @@
 
 #import "Settings.h"
 
-@interface Settings_Ext : Settings
-
+@interface Settings (Ext)
++ (Settings *) settings;
 @end
