@@ -9,7 +9,7 @@
 #import "MSUWebViewViewController.h"
 
 @interface MSUWebViewViewController ()
-
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
 @end
 
 @implementation MSUWebViewViewController
@@ -33,8 +33,40 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [self setWebView:nil];
     [super viewDidUnload];
 }
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    if (!self.spinner)
+    {
+        CGRect frame = [self.webView frame];
+        self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [self.spinner setColor:[UIColor grayColor]];
+        self.spinner.frame = frame;
+        [self.webView addSubview:self.spinner];
+    }
+    [self.spinner startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self.spinner stopAnimating];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [self.spinner stopAnimating];
+    /*UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Ошибка звгрузки"
+                                                   message: [error description]
+                                                  delegate: self
+                                         cancelButtonTitle: @"Обновить"
+                                         otherButtonTitles: @"OK",nil];
+    [alert show];*/
+    //TODO alert with refresh button.
+}
+
 @end

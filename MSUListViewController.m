@@ -12,7 +12,7 @@
 #import "MSUWebViewViewController.h"
 
 //#define NEWS_URL @"https://api.tcsbank.ru/v1/news"              //from this link I will get data
-#define NEWS_URL @"https://s3.amazonaws.com/MusicNotes/config.txt"
+#define NEWS_URL @"https://s3.amazonaws.com/MusicNotes/config_rus.txt"
 #define AUTOLOAD_ON_START                                       //download or not data immediately on startup
 
 
@@ -86,10 +86,9 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     //data is in responseData, so parse it
-    /*NSString *testResponse = @"{\"compositions\":[{\"compositor\":\"Паганини\",\"name\":\"№ 7, ми мажор\",\"instruments\":[{\"name\":\"Гитара\",\"id\":1,\"url\":\"http://nsidc.org/pubs/notes/64/Notes_64_web.pdf\"}]}]}";
-    NSString *testResponseUtf8 =  [NSString stringWithUTF8String:[testResponse UTF8String]];
-    NSData *responseData = [testResponseUtf8 dataUsingEncoding: NSUTF8StringEncoding];
-    self.responseData = [responseData mutableCopy];*/
+    NSString *temp_str = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
+    temp_str = [self stringByDecodingHTMLEntitiesInString:temp_str];
+    self.responseData = [[temp_str dataUsingEncoding:NSUTF8StringEncoding] mutableCopy];
     NSError *myError = nil;
     NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
     if (myError)
@@ -155,6 +154,73 @@
     if ([[segue identifier] isEqualToString:@"segueInstrument"])
         [segue.destinationViewController setComposition:self.composition];
     [super prepareForSegue:segue sender:sender];
+}
+
+- (NSString *)stringByDecodingHTMLEntitiesInString:(NSString *)input {
+    NSMutableString *results = [NSMutableString string];
+    NSScanner *scanner = [NSScanner scannerWithString:input];
+    [scanner setCharactersToBeSkipped:nil];
+    while (![scanner isAtEnd]) {
+        NSString *temp;
+        if ([scanner scanUpToString:@"&" intoString:&temp]) {
+            [results appendString:temp];
+        }
+        if ([scanner scanString:@"&" intoString:NULL]) {
+            BOOL valid = YES;
+            unsigned c = 0;
+            NSUInteger savedLocation = [scanner scanLocation];
+            if ([scanner scanString:@"#" intoString:NULL]) {
+                // it's a numeric entity
+                if ([scanner scanString:@"x" intoString:NULL]) {
+                    // hexadecimal
+                    unsigned int value;
+                    if ([scanner scanHexInt:&value]) {
+                        c = value;
+                    } else {
+                        valid = NO;
+                    }
+                } else {
+                    // decimal
+                    int value;
+                    if ([scanner scanInt:&value] && value >= 0) {
+                        c = value;
+                    } else {
+                        valid = NO;
+                    }
+                }
+                if (![scanner scanString:@";" intoString:NULL]) {
+                    // not ;-terminated, bail out and emit the whole entity
+                    valid = NO;
+                }
+            } else {
+                if (![scanner scanUpToString:@";" intoString:&temp]) {
+                    // &; is not a valid entity
+                    valid = NO;
+                } else if (![scanner scanString:@";" intoString:NULL]) {
+                    // there was no trailing ;
+                    valid = NO;
+                } else if ([temp isEqualToString:@"amp"]) {
+                    c = '&';
+                } else if ([temp isEqualToString:@"quot"]) {
+                    c = '"';
+                } else if ([temp isEqualToString:@"lt"]) {
+                    c = '<';
+                } else if ([temp isEqualToString:@"gt"]) {
+                    c = '>';
+                } else {
+                    // unknown entity
+                    valid = NO;
+                }
+            }
+            if (!valid) {
+                // we errored, just emit the whole thing raw
+                [results appendString:[input substringWithRange:NSMakeRange(savedLocation, [scanner scanLocation]-savedLocation)]];
+            } else {
+                [results appendFormat:@"%C", (unsigned short)c];
+            }
+        }
+    }
+    return results;
 }
 
 @end

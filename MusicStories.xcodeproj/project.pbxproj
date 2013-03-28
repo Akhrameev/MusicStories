@@ -22,11 +22,11 @@
 		DA5C148B16FF95A2002B8FAC /* MSUListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C148A16FF95A2002B8FAC /* MSUListViewController.m */; };
 		DA5C148D16FF9787002B8FAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5C148C16FF9787002B8FAC /* QuartzCore.framework */; };
 		DA5C14901700D4DE002B8FAC /* MSUCompositionData.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C148F1700D4DE002B8FAC /* MSUCompositionData.m */; };
-		DA5C14921700EA38002B8FAC /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14911700EA38002B8FAC /* page.png */; };
 		DA5C14951700EB26002B8FAC /* MSUWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */; };
-		DA5C14A0170214D7002B8FAC /* viola.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C149E170214D7002B8FAC /* viola.png */; };
-		DA5C14A1170214D7002B8FAC /* violin.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C149F170214D7002B8FAC /* violin.png */; };
-		DA5C14A317021725002B8FAC /* music_instruments.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A217021725002B8FAC /* music_instruments.png */; };
+		DA5C14A917023B87002B8FAC /* music_instruments.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A517023B87002B8FAC /* music_instruments.png */; };
+		DA5C14AA17023B87002B8FAC /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A617023B87002B8FAC /* page.png */; };
+		DA5C14AB17023B87002B8FAC /* viola.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A717023B87002B8FAC /* viola.png */; };
+		DA5C14AC17023B87002B8FAC /* violin.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5C14A817023B87002B8FAC /* violin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,12 +53,12 @@
 		DA5C148C16FF9787002B8FAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DA5C148E1700D4DE002B8FAC /* MSUCompositionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUCompositionData.h; sourceTree = "<group>"; };
 		DA5C148F1700D4DE002B8FAC /* MSUCompositionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUCompositionData.m; sourceTree = "<group>"; };
-		DA5C14911700EA38002B8FAC /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		DA5C14931700EB26002B8FAC /* MSUWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUWebViewViewController.h; sourceTree = "<group>"; };
 		DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUWebViewViewController.m; sourceTree = "<group>"; };
-		DA5C149E170214D7002B8FAC /* viola.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viola.png; sourceTree = "<group>"; };
-		DA5C149F170214D7002B8FAC /* violin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = violin.png; sourceTree = "<group>"; };
-		DA5C14A217021725002B8FAC /* music_instruments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_instruments.png; sourceTree = "<group>"; };
+		DA5C14A517023B87002B8FAC /* music_instruments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_instruments.png; sourceTree = "<group>"; };
+		DA5C14A617023B87002B8FAC /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
+		DA5C14A717023B87002B8FAC /* viola.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viola.png; sourceTree = "<group>"; };
+		DA5C14A817023B87002B8FAC /* violin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = violin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,11 +114,11 @@
 				DA5C148F1700D4DE002B8FAC /* MSUCompositionData.m */,
 				DA5C148916FF95A2002B8FAC /* MSUListViewController.h */,
 				DA5C148A16FF95A2002B8FAC /* MSUListViewController.m */,
-				DA5C147016FF46EE002B8FAC /* MainStoryboard.storyboard */,
 				DA5C148316FF94AB002B8FAC /* MSUCarouselViewController.h */,
 				DA5C148416FF94AB002B8FAC /* MSUCarouselViewController.m */,
 				DA5C14931700EB26002B8FAC /* MSUWebViewViewController.h */,
 				DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */,
+				DA5C147016FF46EE002B8FAC /* MainStoryboard.storyboard */,
 				DA5C145F16FF46ED002B8FAC /* Supporting Files */,
 			);
 			path = MusicStories;
@@ -129,15 +129,15 @@
 			children = (
 				DA5C146016FF46ED002B8FAC /* MusicStories-Info.plist */,
 				DA5C146116FF46ED002B8FAC /* InfoPlist.strings */,
-				DA5C14911700EA38002B8FAC /* page.png */,
 				DA5C146416FF46ED002B8FAC /* main.m */,
 				DA5C146616FF46ED002B8FAC /* MusicStories-Prefix.pch */,
 				DA5C146A16FF46ED002B8FAC /* Default.png */,
 				DA5C146C16FF46ED002B8FAC /* Default@2x.png */,
 				DA5C146E16FF46EE002B8FAC /* Default-568h@2x.png */,
-				DA5C149E170214D7002B8FAC /* viola.png */,
-				DA5C149F170214D7002B8FAC /* violin.png */,
-				DA5C14A217021725002B8FAC /* music_instruments.png */,
+				DA5C14A517023B87002B8FAC /* music_instruments.png */,
+				DA5C14A617023B87002B8FAC /* page.png */,
+				DA5C14A717023B87002B8FAC /* viola.png */,
+				DA5C14A817023B87002B8FAC /* violin.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -216,10 +216,10 @@
 				DA5C146D16FF46ED002B8FAC /* Default@2x.png in Resources */,
 				DA5C146F16FF46EE002B8FAC /* Default-568h@2x.png in Resources */,
 				DA5C147216FF46EE002B8FAC /* MainStoryboard.storyboard in Resources */,
-				DA5C14921700EA38002B8FAC /* page.png in Resources */,
-				DA5C14A0170214D7002B8FAC /* viola.png in Resources */,
-				DA5C14A1170214D7002B8FAC /* violin.png in Resources */,
-				DA5C14A317021725002B8FAC /* music_instruments.png in Resources */,
+				DA5C14A917023B87002B8FAC /* music_instruments.png in Resources */,
+				DA5C14AA17023B87002B8FAC /* page.png in Resources */,
+				DA5C14AB17023B87002B8FAC /* viola.png in Resources */,
+				DA5C14AC17023B87002B8FAC /* violin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

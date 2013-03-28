@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MSUCompositionData.h"
 
-@interface MSUWebViewViewController : UIViewController
+@interface MSUWebViewViewController : UIViewController <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) MSUCompositionData *composition;
 @end
