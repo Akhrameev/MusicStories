@@ -17,7 +17,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xzN-rj-CoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="-182"/>
+            <point key="canvasLocation" x="-570" y="722"/>
         </scene>
         <!--List View Controller - Список композиций-->
         <scene sceneID="5WE-8Q-1R6">
@@ -65,11 +65,12 @@
                     <connections>
                         <outlet property="table" destination="jL8-n6-xfx" id="vFi-35-jfA"/>
                         <segue destination="Prl-18-RNX" kind="push" identifier="segueInstrument" id="URW-BE-T6d"/>
+                        <segue destination="ZcS-Ek-iM0" kind="push" identifier="segueNotes" id="cDD-Ng-Q08"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJk-U3-NoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="471" y="-182"/>
+            <point key="canvasLocation" x="487" y="738"/>
         </scene>
         <!--Carousel View Controller-->
         <scene sceneID="ruo-eg-8sR">
@@ -103,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBS-P3-uhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1533" y="-182"/>
+            <point key="canvasLocation" x="1621" y="1538"/>
         </scene>
         <!--Web View View Controller-->
         <scene sceneID="K6f-JJ-Xoe">
@@ -135,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCD-Cu-qQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582" y="-182"/>
+            <point key="canvasLocation" x="2710" y="2138"/>
         </scene>
     </scenes>
     <classes>
@@ -177,4 +178,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="cDD-Ng-Q08"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -71,6 +71,8 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [self.spinner stopAnimating];
+    [[Settings settings] setLastOpened:self.instrument.id];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

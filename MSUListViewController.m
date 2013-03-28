@@ -9,6 +9,7 @@
 #import "MSUListViewController.h"
 #import "Compositor+Ext.h"
 #import "Composition+Ext.h"
+#import "Instrument+Ext.h"
 #import "Settings+Ext.h"
 #import "MSUCarouselViewController.h"
 #import "MSUWebViewViewController.h"
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) NSArray *compositors;
 @property (strong, nonatomic) Compositor *targetCompositor;
 @property (strong, nonatomic) NSArray *targetCompositorCompositions;
+@property (strong, nonatomic) Instrument *lastOpenedInstrument;
 @end
 
 @implementation MSUListViewController
@@ -48,6 +50,7 @@
 
     if (![self.compositors count])
         [self updateCompositors];
+    
 #ifdef AUTOLOAD_ON_START
     if (![self.compositors count])
     {
@@ -57,9 +60,42 @@
 #endif
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    if (!self.lastOpenedInstrument)
+        [self updateLastOpenedInstrument];
+    [self configureNavigationBar];
+}
+
+- (void) configureNavigationBar
+{
+    if (self.lastOpenedInstrument)
+    {
+        UIBarButtonItem *lastOpened = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(lastOpenedClick:)];
+        self.navigationItem.rightBarButtonItem = lastOpened;
+    }
+    else
+        self.navigationItem.rightBarButtonItem = nil;
+}
+
+- (void) lastOpenedClick: (id) sender
+{
+    if (!self.lastOpenedInstrument)
+        [self updateLastOpenedInstrument];
+    if (!self.lastOpenedInstrument)
+        return;
+    [self performSegueWithIdentifier:@"segueNotes" sender:self];
+}
+
 - (void) updateCompositors
 {
     self.compositors = [Compositor MR_findAllSortedBy:@"name" ascending:YES];
+}
+
+- (void) updateLastOpenedInstrument
+{
+    NSNumber *lastOpenedId = [[Settings settings] lastOpened];
+    self.lastOpenedInstrument = [Instrument MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@" argumentArray:@[lastOpenedId]]];
 }
 
 - (IBAction)refreshView:(UIRefreshControl *)refresh;
@@ -192,6 +228,8 @@
 {
     if ([[segue identifier] isEqualToString:@"segueInstrument"])
         [segue.destinationViewController setComposition:self.composition];
+    else if ([[segue identifier] isEqualToString:@"segueNotes"])
+        [segue.destinationViewController setInstrument:self.lastOpenedInstrument];
     [super prepareForSegue:segue sender:sender];
 }
 
