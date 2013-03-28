@@ -60,13 +60,22 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [self.spinner stopAnimating];
-    /*UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Ошибка звгрузки"
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Ошибка звгрузки"
                                                    message: [error description]
                                                   delegate: self
                                          cancelButtonTitle: @"Обновить"
                                          otherButtonTitles: @"OK",nil];
-    [alert show];*/
-    //TODO alert with refresh button.
+    [alert setTag:1];
+    [alert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1)
+    {
+        if (buttonIndex == 0)
+            [self.webView reload];
+    }
 }
 
 @end
