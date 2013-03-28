@@ -38,7 +38,13 @@
     [self.carousel setCenterItemWhenSelected:YES];
     if (!self.arrayInstruments)
         [self updateArrayInstruments];
+    [self configureNavigationBar];
 	// Do any additional setup after loading the view.
+}
+
+- (void) configureNavigationBar
+{
+    [self.navigationItem setTitle:self.composition.name];
 }
 
 - (void) updateArrayInstruments

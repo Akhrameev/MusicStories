@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUCarouselViewController.m"
-         timestampString = "386197766.660412"
+         timestampString = "386201822.289253"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "78"
-         endingLineNumber = "78"
+         startingLineNumber = "84"
+         endingLineNumber = "84"
          landmarkName = "-carousel:viewForItemAtIndex:reusingView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,11 +229,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUCarouselViewController.m"
-         timestampString = "386197766.660412"
+         timestampString = "386201822.289253"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "96"
-         endingLineNumber = "96"
+         startingLineNumber = "102"
+         endingLineNumber = "102"
          landmarkName = "-carousel:viewForItemAtIndex:reusingView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUCarouselViewController.m"
-         timestampString = "386197766.660412"
+         timestampString = "386201822.289253"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "116"
-         endingLineNumber = "116"
+         startingLineNumber = "122"
+         endingLineNumber = "122"
          landmarkName = "-carousel:didSelectItemAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -255,11 +255,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUCarouselViewController.m"
-         timestampString = "386197766.660412"
+         timestampString = "386201822.289253"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "122"
-         endingLineNumber = "122"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -268,11 +268,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUWebViewViewController.m"
-         timestampString = "386013519.427466"
+         timestampString = "386201737.117503"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -294,11 +294,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUWebViewViewController.m"
-         timestampString = "386165071.021281"
+         timestampString = "386201737.117503"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
          landmarkName = "-webViewDidStartLoad:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -372,11 +372,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUCarouselViewController.m"
-         timestampString = "386197766.660412"
+         timestampString = "386201822.289253"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "108"
-         endingLineNumber = "108"
+         startingLineNumber = "114"
+         endingLineNumber = "114"
          landmarkName = "@implementation MSUCarouselViewController"
          landmarkType = "3">
       </FileBreakpoint>
@@ -411,11 +411,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUCarouselViewController.m"
-         timestampString = "386197766.660412"
+         timestampString = "386201822.289253"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "67"
-         endingLineNumber = "67"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
          landmarkName = "-numberOfItemsInCarousel:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -424,11 +424,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUCarouselViewController.m"
-         timestampString = "386197766.660412"
+         timestampString = "386201822.289253"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "75"
-         endingLineNumber = "75"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
          landmarkName = "-carousel:viewForItemAtIndex:reusingView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -443,6 +443,45 @@
          startingLineNumber = "49"
          endingLineNumber = "49"
          landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUWebViewViewController.m"
+         timestampString = "386201737.117503"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
+         landmarkName = "-configureNavigationBar"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUWebViewViewController.m"
+         timestampString = "386201737.117503"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
+         landmarkName = "-reloadWebView:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUWebViewViewController.m"
+         timestampString = "386201737.117503"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "104"
+         endingLineNumber = "104"
+         landmarkName = "-stopLoading:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

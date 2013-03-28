@@ -7,6 +7,8 @@
 //
 
 #import "MSUWebViewViewController.h"
+#import "Settings+Ext.h"
+#import "Composition+Ext.h"
 
 @interface MSUWebViewViewController ()
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
@@ -25,6 +27,20 @@
     [super viewDidLoad];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.instrument.url]]];
 	// Do any additional setup after loading the view.
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self configureNavigationBar];
+    [super viewWillAppear:animated];
+}
+
+- (void) configureNavigationBar
+{
+    UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadWebView:)];
+    UIBarButtonItem *stop = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopLoading:)];
+    [self.navigationItem setRightBarButtonItems:@[refresh, stop] animated:YES];
+    [self.navigationItem setTitle:self.instrument.linkComposition.name];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,8 +90,18 @@
     if (alertView.tag == 1)
     {
         if (buttonIndex == 0)
-            [self.webView reload];
+            [self reloadWebView:self];
     }
+}
+
+- (void) reloadWebView: (id) sender
+{
+    [self.webView reload];
+}
+
+- (void) stopLoading: (id) sender
+{
+    [self.webView stopLoading];
 }
 
 @end
