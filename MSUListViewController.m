@@ -29,6 +29,7 @@
 @property (strong, nonatomic) NSArray *targetCompositorCompositions;
 @property (strong, nonatomic) Instrument *lastOpenedInstrument;
 @property NSInteger currentRequestType;
+@property (strong, nonatomic) MYIntroductionView *introductionView;
 @end
 
 enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
@@ -65,13 +66,37 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    if ([Settings showIntroduction])
+        [self showIntroduction];
+    else
+        [self configureNavigationBar];
     if (!self.lastOpenedInstrument)
         [self updateLastOpenedInstrument];
-    [self configureNavigationBar];
+}
+
+- (void) showIntroduction
+{
+    self.navigationItem.rightBarButtonItems = nil;
+    [self.navigationItem setTitle:@"Music Stories"];
+    //STEP 1 Construct Panels
+    MYIntroductionPanel *panel = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"SampleImage1"] description:@"Welcome to MYIntroductionView, your 100 percent customizable interface for introductions and tutorials! Simply add a few classes to your project, and you are ready to go!"];
+    
+    //You may also add in a title for each panel
+    MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithimage:[UIImage imageNamed:@"SampleImage2"] title:@"Your Ticket!" description:@"MYIntroductionView is your ticket to a great tutorial or introduction!"];
+    
+    //STEP 2 Create IntroductionView
+    
+    self.introductionView = [[MYIntroductionView alloc] initWithFrame:self.view.bounds headerText:@"" panels:@[panel, panel2] languageDirection:MYLanguageDirectionLeftToRight];
+    [self.introductionView setBackgroundImage:[UIImage imageNamed:@"Notes_crop.jpg"]];
+    [self.introductionView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+    self.introductionView.delegate = self;
+    
+    [self.introductionView showInView:self.view];
 }
 
 - (void) configureNavigationBar
 {
+    [self.navigationItem setTitle:@"Список композиций"];
     UIBarButtonItem *trash = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clearStoredData:)];
     if (self.lastOpenedInstrument)
     {
@@ -370,4 +395,24 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     return results;
 }
 
+#pragma mark - Introduction Delegate Methods
+
+-(void)introductionDidFinishWithType:(MYFinishType)finishType{
+    if (finishType == MYFinishTypeSkipButton) {
+        NSLog(@"Did Finish Introduction By Skipping It");
+    }
+    else if (finishType == MYFinishTypeSwipeOut){
+        NSLog(@"Did Finish Introduction By Swiping Out");
+    }
+    [[Settings settings] setLastIntroductionShown:[NSDate date]];
+    [Settings save];
+    self.introductionView = nil;
+    [self configureNavigationBar];
+    //One might consider making the introductionview a class variable and releasing it here.
+    // I didn't do this to keep things simple for the sake of example.
+}
+
+-(void)introductionDidChangeToPanel:(MYIntroductionPanel *)panel withIndex:(NSInteger)panelIndex{
+    NSLog(@"%@ \nPanelIndex: %d", panel.Description, panelIndex);
+}
 @end

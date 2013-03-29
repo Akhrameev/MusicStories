@@ -23,15 +23,16 @@
     </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES">
         <attribute name="lastDateUpdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastIntroductionShown" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="lastOpened" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="lastUpdate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="listCachedData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CachedData" inverseName="linkSettings" inverseEntity="CachedData" syncable="YES"/>
     </entity>
     <elements>
+        <element name="CachedData" positionX="-360" positionY="36" width="128" height="88"/>
         <element name="Composition" positionX="-351" positionY="-276" width="128" height="88"/>
         <element name="Compositor" positionX="-99" positionY="-450" width="128" height="73"/>
         <element name="Instrument" positionX="-81" positionY="-99" width="128" height="118"/>
-        <element name="Settings" positionX="-371" positionY="-108" width="128" height="103"/>
-        <element name="CachedData" positionX="-360" positionY="36" width="128" height="88"/>
+        <element name="Settings" positionX="-371" positionY="-108" width="128" height="120"/>
     </elements>
 </model>

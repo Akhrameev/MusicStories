@@ -15,4 +15,5 @@
 + (void) saveDataInCacheFromURL: (NSString *) url : (NSData *) data;
 + (void) clearDataFromCacheForURL: (NSString *) url;
 + (void) clearCache;
++ (BOOL) showIntroduction;
 @end

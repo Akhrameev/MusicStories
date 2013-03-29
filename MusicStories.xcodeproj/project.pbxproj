@@ -65,7 +65,12 @@
 		DA5C16CF1704CA0D002B8FAC /* Settings+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16CE1704CA0D002B8FAC /* Settings+Ext.m */; };
 		DA9B9ADE170568FE0049B8A0 /* CachedData+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9ADD170568FE0049B8A0 /* CachedData+Ext.m */; };
 		DA9B9AE117056A790049B8A0 /* CachedData.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9AE017056A790049B8A0 /* CachedData.m */; };
-		DA9B9AE417056A980049B8A0 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9AE317056A970049B8A0 /* Settings.m */; };
+		DA9B9AFF1705C4870049B8A0 /* SampleImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9B9AFB1705C4870049B8A0 /* SampleImage1.png */; };
+		DA9B9B001705C4870049B8A0 /* SampleImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9B9AFC1705C4870049B8A0 /* SampleImage2.png */; };
+		DA9B9B041705C9DF0049B8A0 /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9AEF1705BFBC0049B8A0 /* MYIntroductionPanel.m */; };
+		DA9B9B051705C9E60049B8A0 /* MYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9AF11705BFBC0049B8A0 /* MYIntroductionView.m */; };
+		DA9B9B0B1705CC0E0049B8A0 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9B0A1705CC0C0049B8A0 /* Settings.m */; };
+		DA9B9B131705D3FB0049B8A0 /* Notes_crop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA9B9B121705D3FA0049B8A0 /* Notes_crop.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,8 +177,15 @@
 		DA9B9ADD170568FE0049B8A0 /* CachedData+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CachedData+Ext.m"; sourceTree = "<group>"; };
 		DA9B9ADF17056A780049B8A0 /* CachedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CachedData.h; path = ../CachedData.h; sourceTree = "<group>"; };
 		DA9B9AE017056A790049B8A0 /* CachedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CachedData.m; path = ../CachedData.m; sourceTree = "<group>"; };
-		DA9B9AE217056A970049B8A0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = ../Settings.h; sourceTree = "<group>"; };
-		DA9B9AE317056A970049B8A0 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = ../Settings.m; sourceTree = "<group>"; };
+		DA9B9AEE1705BFBC0049B8A0 /* MYIntroductionPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
+		DA9B9AEF1705BFBC0049B8A0 /* MYIntroductionPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
+		DA9B9AF01705BFBC0049B8A0 /* MYIntroductionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYIntroductionView.h; sourceTree = "<group>"; };
+		DA9B9AF11705BFBC0049B8A0 /* MYIntroductionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionView.m; sourceTree = "<group>"; };
+		DA9B9AFB1705C4870049B8A0 /* SampleImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage1.png; sourceTree = "<group>"; };
+		DA9B9AFC1705C4870049B8A0 /* SampleImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage2.png; sourceTree = "<group>"; };
+		DA9B9B091705CC0B0049B8A0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = ../Settings.h; sourceTree = "<group>"; };
+		DA9B9B0A1705CC0C0049B8A0 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = ../Settings.m; sourceTree = "<group>"; };
+		DA9B9B121705D3FA0049B8A0 /* Notes_crop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Notes_crop.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +257,7 @@
 		DA5C145F16FF46ED002B8FAC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA9B9AF81705C4780049B8A0 /* SampleIntroduction */,
 				DA5C14B61704C013002B8FAC /* MS-144.png */,
 				DA5C14B41704C008002B8FAC /* MS-72.png */,
 				DA5C146016FF46ED002B8FAC /* MusicStories-Info.plist */,
@@ -265,6 +278,7 @@
 		DA5C147B16FF48E4002B8FAC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DA9B9AED1705BF990049B8A0 /* IntroductionView */,
 				DA5C165B1704C3BA002B8FAC /* MagicalRecord */,
 				DA5C145E16FF46ED002B8FAC /* MusicStories */,
 			);
@@ -390,8 +404,8 @@
 				DA5C16BB1704C93D002B8FAC /* Compositor.m */,
 				DA5C16BD1704C964002B8FAC /* Instrument.h */,
 				DA5C16BE1704C966002B8FAC /* Instrument.m */,
-				DA9B9AE217056A970049B8A0 /* Settings.h */,
-				DA9B9AE317056A970049B8A0 /* Settings.m */,
+				DA9B9B091705CC0B0049B8A0 /* Settings.h */,
+				DA9B9B0A1705CC0C0049B8A0 /* Settings.m */,
 				DA9B9ADF17056A780049B8A0 /* CachedData.h */,
 				DA9B9AE017056A790049B8A0 /* CachedData.m */,
 			);
@@ -413,6 +427,27 @@
 				DA9B9ADD170568FE0049B8A0 /* CachedData+Ext.m */,
 			);
 			name = "Entities+Ext";
+			sourceTree = "<group>";
+		};
+		DA9B9AED1705BF990049B8A0 /* IntroductionView */ = {
+			isa = PBXGroup;
+			children = (
+				DA9B9AEE1705BFBC0049B8A0 /* MYIntroductionPanel.h */,
+				DA9B9AEF1705BFBC0049B8A0 /* MYIntroductionPanel.m */,
+				DA9B9AF01705BFBC0049B8A0 /* MYIntroductionView.h */,
+				DA9B9AF11705BFBC0049B8A0 /* MYIntroductionView.m */,
+			);
+			name = IntroductionView;
+			sourceTree = "<group>";
+		};
+		DA9B9AF81705C4780049B8A0 /* SampleIntroduction */ = {
+			isa = PBXGroup;
+			children = (
+				DA9B9B121705D3FA0049B8A0 /* Notes_crop.jpg */,
+				DA9B9AFB1705C4870049B8A0 /* SampleImage1.png */,
+				DA9B9AFC1705C4870049B8A0 /* SampleImage2.png */,
+			);
+			name = SampleIntroduction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +513,9 @@
 				DA5C14AC17023B87002B8FAC /* violin.png in Resources */,
 				DA5C14B51704C008002B8FAC /* MS-72.png in Resources */,
 				DA5C14B71704C013002B8FAC /* MS-144.png in Resources */,
+				DA9B9AFF1705C4870049B8A0 /* SampleImage1.png in Resources */,
+				DA9B9B001705C4870049B8A0 /* SampleImage2.png in Resources */,
+				DA9B9B131705D3FB0049B8A0 /* Notes_crop.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +568,9 @@
 				DA5C16CF1704CA0D002B8FAC /* Settings+Ext.m in Sources */,
 				DA9B9ADE170568FE0049B8A0 /* CachedData+Ext.m in Sources */,
 				DA9B9AE117056A790049B8A0 /* CachedData.m in Sources */,
-				DA9B9AE417056A980049B8A0 /* Settings.m in Sources */,
+				DA9B9B041705C9DF0049B8A0 /* MYIntroductionPanel.m in Sources */,
+				DA9B9B051705C9E60049B8A0 /* MYIntroductionView.m in Sources */,
+				DA9B9B0B1705CC0E0049B8A0 /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +673,7 @@
 					"\"$(SRCROOT)/MagicalRecord-master/Project Files/iOS App Unit Tests/Frameworks/OCMockLibrary\"",
 					"\"$(SRCROOT)/MagicalRecord-master/Project Files/Mac App Unit Tests/Frameworks/OCMockLibrary\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1C734854-D073-4771-A2C5-A4A4DC9F4AD4";
@@ -660,6 +701,7 @@
 					"\"$(SRCROOT)/MagicalRecord-master/Project Files/iOS App Unit Tests/Frameworks/OCMockLibrary\"",
 					"\"$(SRCROOT)/MagicalRecord-master/Project Files/Mac App Unit Tests/Frameworks/OCMockLibrary\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1C734854-D073-4771-A2C5-A4A4DC9F4AD4";

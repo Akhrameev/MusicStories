@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MYIntroductionView.h"
 
-@interface MSUListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MSUListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MYIntroductionDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @end

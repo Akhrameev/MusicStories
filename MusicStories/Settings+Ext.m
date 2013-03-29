@@ -75,4 +75,18 @@
     }
     [Settings save];
 }
++ (BOOL) showIntroduction
+{
+    return NO;//REDO
+    Settings *set = [Settings settings];
+    if (!set.lastIntroductionShown)
+        return YES;
+   
+    NSDateComponents *components = [[NSCalendar currentCalendar] components: NSDayCalendarUnit
+                                                 fromDate: set.lastIntroductionShown toDate: [NSDate date] options: 0];
+    NSInteger days = [components day];
+    if (days > 50 || days < -50)
+        return YES;
+    return NO;
+}
 @end

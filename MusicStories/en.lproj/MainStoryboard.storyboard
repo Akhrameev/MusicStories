@@ -12,12 +12,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="dU8-id-ZzL" kind="relationship" relationship="rootViewController" id="uvq-Q9-Thc"/>
+                        <segue destination="dU8-id-ZzL" kind="relationship" relationship="rootViewController" id="stA-Bn-hvs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xzN-rj-CoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="722"/>
+            <point key="canvasLocation" x="-742" y="-318"/>
         </scene>
         <!--List View Controller - Список композиций-->
         <scene sceneID="5WE-8Q-1R6">
@@ -179,6 +179,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cDD-Ng-Q08"/>
+        <segue reference="CTs-V4-Qcx"/>
     </inferredMetricsTieBreakers>
 </document>
