@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[MSUListViewController connectionDidFinishLoadingDate:]:MSUListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[Settings settings] lastUpdate]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUListViewController connectionDidFinishLoading:]:MSUListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "connection.currentRequest.URL">
+            </PersistentString>
+            <PersistentString
+               value = "[[connection currentRequest] URL]">
+            </PersistentString>
+            <PersistentString
+               value = "[connection description]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -11,6 +11,7 @@
 
 @implementation Settings
 
+@dynamic lastDateUpdate;
 @dynamic lastOpened;
 @dynamic lastUpdate;
 

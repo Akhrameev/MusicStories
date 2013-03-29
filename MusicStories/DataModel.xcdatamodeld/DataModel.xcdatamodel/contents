@@ -17,13 +17,14 @@
         <relationship name="linkComposition" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Composition" inverseName="listInstuments" inverseEntity="Composition" syncable="YES"/>
     </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES">
+        <attribute name="lastDateUpdate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="lastOpened" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="lastUpdate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Compositor" positionX="-99" positionY="-450" width="128" height="73"/>
         <element name="Composition" positionX="-351" positionY="-276" width="128" height="88"/>
+        <element name="Compositor" positionX="-99" positionY="-450" width="128" height="73"/>
         <element name="Instrument" positionX="-81" positionY="-99" width="128" height="118"/>
-        <element name="Settings" positionX="-117" positionY="86" width="128" height="43"/>
+        <element name="Settings" positionX="-117" positionY="86" width="128" height="90"/>
     </elements>
 </model>

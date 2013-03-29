@@ -27,7 +27,10 @@
 @property (strong, nonatomic) Compositor *targetCompositor;
 @property (strong, nonatomic) NSArray *targetCompositorCompositions;
 @property (strong, nonatomic) Instrument *lastOpenedInstrument;
+@property NSInteger currentRequestType;
 @end
+
+enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
 
 @implementation MSUListViewController
 
@@ -50,7 +53,6 @@
 
     if (![self.compositors count])
         [self updateCompositors];
-    
 #ifdef AUTOLOAD_ON_START
     if (![self.compositors count])
     {
@@ -69,13 +71,14 @@
 
 - (void) configureNavigationBar
 {
+    UIBarButtonItem *trash = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clearStoredData:)];
     if (self.lastOpenedInstrument)
     {
         UIBarButtonItem *lastOpened = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(lastOpenedClick:)];
-        self.navigationItem.rightBarButtonItem = lastOpened;
+        self.navigationItem.rightBarButtonItems = @[trash, lastOpened];
     }
     else
-        self.navigationItem.rightBarButtonItem = nil;
+        self.navigationItem.rightBarButtonItems = @[trash];
 }
 
 - (void) lastOpenedClick: (id) sender
@@ -85,6 +88,21 @@
     if (!self.lastOpenedInstrument)
         return;
     [self performSegueWithIdentifier:@"segueNotes" sender:self];
+}
+
+- (void) clearStoredData: (id) sender
+{
+    //TODO alert
+    if (![self.compositors count])
+        [self updateCompositors];
+    [[Settings settings] setLastUpdate:@(-1)];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+    for (Compositor *compositor in self.compositors)
+        [compositor deleteWithChilds];
+    [self updateCompositors];
+    [self.table reloadData];
+    [self.refreshControl beginRefreshing];
+    [self refreshView: self.refreshControl];
 }
 
 - (void) updateCompositors
@@ -103,15 +121,17 @@
     //styling refreshView
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Данные обновляются..."];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM d, h:mm a"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    //[formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ru"]];
     NSString *lastUpdated = [NSString stringWithFormat:@"Последнее обновление: %@",
-                             [formatter stringFromDate:[NSDate date]]];
+                             [formatter stringFromDate:[Settings settings].lastDateUpdate]];
     [refresh setAttributedTitle: [[NSAttributedString alloc] initWithString:lastUpdated]];
     
     //get request to get data
     self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:NEWS_URL]];
+                             [NSURL URLWithString:DATE_URL]];
+    self.currentRequestType = REQUEST_TYPE_DATE;
     self.urlconnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
@@ -136,6 +156,16 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    if (connection != self.urlconnection)
+        return;
+    if (self.currentRequestType == REQUEST_TYPE_COMPOSITORS)
+        [self connectionDidFinishLoadingCompositors:connection];
+    else if (self.currentRequestType == REQUEST_TYPE_DATE)
+        [self connectionDidFinishLoadingDate:connection];
+}
+
+- (void)connectionDidFinishLoadingCompositors:(NSURLConnection *)connection
 {
     //data is in responseData, so parse it
     //NSString *temp_str = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
@@ -169,6 +199,32 @@
     self.compositors = compositorsMutable;
     [self.table reloadData];
     [self.refreshControl endRefreshing];
+}
+
+- (void)connectionDidFinishLoadingDate:(NSURLConnection *)connection
+{
+    NSError *myError = nil;
+    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
+    if (myError)
+    {
+        //alert user about parse error and stop visualizing refreshing
+        [self.refreshControl endRefreshing];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Date parse error" message:[myError description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [self.refreshControl endRefreshing];
+        [alert show];
+        return;
+    }
+    [self.refreshControl endRefreshing];
+    [[Settings settings] setLastDateUpdate:[NSDate date]];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+    NSNumber *date = [res objectForKey:@"date"];
+    if ([[Settings settings] lastUpdate].integerValue >= date.integerValue)
+        return;
+    self.responseData = [NSMutableData data];
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:NEWS_URL]];
+    self.currentRequestType = REQUEST_TYPE_COMPOSITORS;
+    self.urlconnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 - (void)didReceiveMemoryWarning
