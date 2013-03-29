@@ -87,11 +87,19 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     //STEP 2 Create IntroductionView
     
     self.introductionView = [[MYIntroductionView alloc] initWithFrame:self.view.bounds headerText:@"" panels:@[panel, panel2] languageDirection:MYLanguageDirectionLeftToRight];
-    [self.introductionView setBackgroundImage:[UIImage imageNamed:@"Notes_crop.jpg"]];
-    [self.introductionView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+    
+    [self.introductionView setBackgroundImage:[UIImage imageNamed:@"SampleBackground"]];
+    [self recursiveAutoresizeSubviews:self.introductionView :UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     self.introductionView.delegate = self;
     
     [self.introductionView showInView:self.view];
+}
+
+- (void) recursiveAutoresizeSubviews: (UIView *) view : (NSInteger) mask
+{
+    [view setAutoresizingMask:mask];
+    for (UIView *subview in view.subviews)
+        [self recursiveAutoresizeSubviews: subview : mask];
 }
 
 - (void) configureNavigationBar

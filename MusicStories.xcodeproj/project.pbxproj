@@ -71,6 +71,7 @@
 		DA9B9B051705C9E60049B8A0 /* MYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9AF11705BFBC0049B8A0 /* MYIntroductionView.m */; };
 		DA9B9B0B1705CC0E0049B8A0 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9B0A1705CC0C0049B8A0 /* Settings.m */; };
 		DA9B9B131705D3FB0049B8A0 /* Notes_crop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA9B9B121705D3FA0049B8A0 /* Notes_crop.jpg */; };
+		DA9B9B151705DB320049B8A0 /* SampleBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9B9B141705DB320049B8A0 /* SampleBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,6 +187,7 @@
 		DA9B9B091705CC0B0049B8A0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = ../Settings.h; sourceTree = "<group>"; };
 		DA9B9B0A1705CC0C0049B8A0 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = ../Settings.m; sourceTree = "<group>"; };
 		DA9B9B121705D3FA0049B8A0 /* Notes_crop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Notes_crop.jpg; sourceTree = "<group>"; };
+		DA9B9B141705DB320049B8A0 /* SampleBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +445,7 @@
 		DA9B9AF81705C4780049B8A0 /* SampleIntroduction */ = {
 			isa = PBXGroup;
 			children = (
+				DA9B9B141705DB320049B8A0 /* SampleBackground.png */,
 				DA9B9B121705D3FA0049B8A0 /* Notes_crop.jpg */,
 				DA9B9AFB1705C4870049B8A0 /* SampleImage1.png */,
 				DA9B9AFC1705C4870049B8A0 /* SampleImage2.png */,
@@ -516,6 +519,7 @@
 				DA9B9AFF1705C4870049B8A0 /* SampleImage1.png in Resources */,
 				DA9B9B001705C4870049B8A0 /* SampleImage2.png in Resources */,
 				DA9B9B131705D3FB0049B8A0 /* Notes_crop.jpg in Resources */,
+				DA9B9B151705DB320049B8A0 /* SampleBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
