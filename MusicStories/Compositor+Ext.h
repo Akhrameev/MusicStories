@@ -11,4 +11,5 @@
 @interface Compositor (Ext)
 + (Compositor *) syncFromDict:(NSDictionary *)dict;
 - (void) deleteWithChilds;
++ (void) save;
 @end

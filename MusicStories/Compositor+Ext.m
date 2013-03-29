@@ -27,7 +27,7 @@
                 composition.linkCompositor = compositor;
             }
         }
-    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+    [Compositor save];
     return compositor;
 }
 - (void) deleteWithChilds
@@ -35,6 +35,10 @@
     for (Composition *composition in self.listCompositions)
          [composition deleteWithChilds];
     [self MR_deleteEntity];
+    [Compositor save];
+}
++ (void) save
+{
     [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
 }
 @end

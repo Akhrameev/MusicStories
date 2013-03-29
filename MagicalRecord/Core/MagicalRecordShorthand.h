@@ -143,7 +143,7 @@
 - (void) saveInBackgroundCompletion:(void (^)(void))completion __attribute__((deprecated));
 - (void) saveInBackgroundErrorHandler:(void (^)(NSError *error))errorCallback __attribute__((deprecated));
 - (void) saveInBackgroundErrorHandler:(void (^)(NSError *error))errorCallback completion:(void (^)(void))completion __attribute__((deprecated));
-- (void) saveNestedContexts __attribute__((deprecated));
+- (void) saveNestedContexts /*__attribute__((deprecated))*/;
 - (void) saveNestedContextsErrorHandler:(void (^)(NSError *error))errorCallback __attribute__((deprecated));
 - (void) saveNestedContextsErrorHandler:(void (^)(NSError *error))errorCallback completion:(void (^)(void))completion __attribute__((deprecated));
 @end

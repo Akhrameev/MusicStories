@@ -10,4 +10,9 @@
 
 @interface Settings (Ext)
 + (Settings *) settings;
++ (void) save;
++ (NSData *) dataFromCacheForURL: (NSString *) url;
++ (void) saveDataInCacheFromURL: (NSString *) url : (NSData *) data;
++ (void) clearDataFromCacheForURL: (NSString *) url;
++ (void) clearCache;
 @end

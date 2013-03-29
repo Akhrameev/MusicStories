@@ -18,12 +18,16 @@
     instrument.name = [dict objectForKey:@"name"];
     instrument.pic = [dict objectForKey:@"pic"];
     instrument.id = [dict objectForKey:@"id"];
-    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+    [Instrument save];
     return instrument;
 }
 - (void) deleteWithChilds
 {
     [self MR_deleteEntity];
+    [Instrument save];
+}
++ (void) save
+{
     [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
 }
 @end

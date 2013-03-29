@@ -21,6 +21,7 @@
 
 @interface MSUListViewController ()
 @property (strong, nonatomic) NSURLConnection *urlconnection;
+@property (strong, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) Composition *composition;
 @property (strong, nonatomic) NSArray *compositors;
@@ -96,7 +97,7 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     if (![self.compositors count])
         [self updateCompositors];
     [[Settings settings] setLastUpdate:@(-1)];
-    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+    [Settings save];
     for (Compositor *compositor in self.compositors)
         [compositor deleteWithChilds];
     [self updateCompositors];
@@ -119,14 +120,27 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
 - (IBAction)refreshView:(UIRefreshControl *)refresh;
 {
     //styling refreshView
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Данные обновляются..."];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    //[formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ru"]];
-    NSString *lastUpdated = [NSString stringWithFormat:@"Последнее обновление: %@",
-                             [formatter stringFromDate:[Settings settings].lastDateUpdate]];
-    [refresh setAttributedTitle: [[NSAttributedString alloc] initWithString:lastUpdated]];
-    
+    static BOOL refreshed;
+    if (refreshed)
+    {
+        refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Данные обновляются..."];
+        NSDate *date = [Settings settings].lastDateUpdate;
+        if (date)
+        {
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            //[formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ru"]];
+            
+            NSString *lastUpdated = [NSString stringWithFormat:@"Последнее обновление: %@",
+                                     [formatter stringFromDate:[Settings settings].lastDateUpdate]];
+            [refresh setAttributedTitle: [[NSAttributedString alloc] initWithString:lastUpdated]];
+        }
+    }
+    else
+    {
+        refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+    }
+    refreshed = YES;
     //get request to get data
     self.responseData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:
@@ -216,7 +230,7 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     }
     [self.refreshControl endRefreshing];
     [[Settings settings] setLastDateUpdate:[NSDate date]];
-    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+    [Settings save];
     NSNumber *date = [res objectForKey:@"date"];
     if ([[Settings settings] lastUpdate].integerValue >= date.integerValue)
         return;

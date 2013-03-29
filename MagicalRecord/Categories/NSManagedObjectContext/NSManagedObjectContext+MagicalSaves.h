@@ -75,7 +75,7 @@ typedef void (^MRSaveCompletionHandler)(BOOL success, NSError *error);
 /// \brief      Asynchronously save changes in the current context all the way back to the persistent store
 /// \discussion Replaced by \MR_saveToPersistentStoreWithCompletion:
 /// \deprecated
-- (void) MR_saveNestedContexts __attribute__((deprecated));
+- (void) MR_saveNestedContexts /*__attribute__((deprecated))*/;
 
 /// \brief      Asynchronously save changes in the current context all the way back to the persistent store
 /// \param      errorCallback Block that is called if an error is encountered while saving. Always called on the main thread.

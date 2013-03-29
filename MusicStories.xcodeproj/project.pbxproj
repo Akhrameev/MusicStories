@@ -59,11 +59,13 @@
 		DA5C16B81704C8FF002B8FAC /* Composition.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16B71704C8FE002B8FAC /* Composition.m */; };
 		DA5C16BC1704C93D002B8FAC /* Compositor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16BB1704C93D002B8FAC /* Compositor.m */; };
 		DA5C16BF1704C967002B8FAC /* Instrument.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16BE1704C966002B8FAC /* Instrument.m */; };
-		DA5C16C21704C98B002B8FAC /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16C11704C989002B8FAC /* Settings.m */; };
 		DA5C16C61704C9C5002B8FAC /* Compositor+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16C51704C9C5002B8FAC /* Compositor+Ext.m */; };
 		DA5C16C91704C9DF002B8FAC /* Composition+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16C81704C9DF002B8FAC /* Composition+Ext.m */; };
 		DA5C16CC1704C9F6002B8FAC /* Instrument+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16CB1704C9F6002B8FAC /* Instrument+Ext.m */; };
 		DA5C16CF1704CA0D002B8FAC /* Settings+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5C16CE1704CA0D002B8FAC /* Settings+Ext.m */; };
+		DA9B9ADE170568FE0049B8A0 /* CachedData+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9ADD170568FE0049B8A0 /* CachedData+Ext.m */; };
+		DA9B9AE117056A790049B8A0 /* CachedData.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9AE017056A790049B8A0 /* CachedData.m */; };
+		DA9B9AE417056A980049B8A0 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9B9AE317056A970049B8A0 /* Settings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,8 +160,6 @@
 		DA5C16BB1704C93D002B8FAC /* Compositor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Compositor.m; path = ../Compositor.m; sourceTree = "<group>"; };
 		DA5C16BD1704C964002B8FAC /* Instrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instrument.h; sourceTree = "<group>"; };
 		DA5C16BE1704C966002B8FAC /* Instrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instrument.m; sourceTree = "<group>"; };
-		DA5C16C01704C988002B8FAC /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
-		DA5C16C11704C989002B8FAC /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		DA5C16C41704C9C5002B8FAC /* Compositor+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Compositor+Ext.h"; sourceTree = "<group>"; };
 		DA5C16C51704C9C5002B8FAC /* Compositor+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Compositor+Ext.m"; sourceTree = "<group>"; };
 		DA5C16C71704C9DF002B8FAC /* Composition+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Composition+Ext.h"; sourceTree = "<group>"; };
@@ -168,6 +168,12 @@
 		DA5C16CB1704C9F6002B8FAC /* Instrument+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Instrument+Ext.m"; sourceTree = "<group>"; };
 		DA5C16CD1704CA0C002B8FAC /* Settings+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Settings+Ext.h"; sourceTree = "<group>"; };
 		DA5C16CE1704CA0D002B8FAC /* Settings+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Settings+Ext.m"; sourceTree = "<group>"; };
+		DA9B9ADC170568FE0049B8A0 /* CachedData+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CachedData+Ext.h"; sourceTree = "<group>"; };
+		DA9B9ADD170568FE0049B8A0 /* CachedData+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CachedData+Ext.m"; sourceTree = "<group>"; };
+		DA9B9ADF17056A780049B8A0 /* CachedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CachedData.h; path = ../CachedData.h; sourceTree = "<group>"; };
+		DA9B9AE017056A790049B8A0 /* CachedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CachedData.m; path = ../CachedData.m; sourceTree = "<group>"; };
+		DA9B9AE217056A970049B8A0 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = ../Settings.h; sourceTree = "<group>"; };
+		DA9B9AE317056A970049B8A0 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = ../Settings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,8 +390,10 @@
 				DA5C16BB1704C93D002B8FAC /* Compositor.m */,
 				DA5C16BD1704C964002B8FAC /* Instrument.h */,
 				DA5C16BE1704C966002B8FAC /* Instrument.m */,
-				DA5C16C01704C988002B8FAC /* Settings.h */,
-				DA5C16C11704C989002B8FAC /* Settings.m */,
+				DA9B9AE217056A970049B8A0 /* Settings.h */,
+				DA9B9AE317056A970049B8A0 /* Settings.m */,
+				DA9B9ADF17056A780049B8A0 /* CachedData.h */,
+				DA9B9AE017056A790049B8A0 /* CachedData.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -401,6 +409,8 @@
 				DA5C16CB1704C9F6002B8FAC /* Instrument+Ext.m */,
 				DA5C16CD1704CA0C002B8FAC /* Settings+Ext.h */,
 				DA5C16CE1704CA0D002B8FAC /* Settings+Ext.m */,
+				DA9B9ADC170568FE0049B8A0 /* CachedData+Ext.h */,
+				DA9B9ADD170568FE0049B8A0 /* CachedData+Ext.m */,
 			);
 			name = "Entities+Ext";
 			sourceTree = "<group>";
@@ -514,11 +524,13 @@
 				DA5C16B81704C8FF002B8FAC /* Composition.m in Sources */,
 				DA5C16BC1704C93D002B8FAC /* Compositor.m in Sources */,
 				DA5C16BF1704C967002B8FAC /* Instrument.m in Sources */,
-				DA5C16C21704C98B002B8FAC /* Settings.m in Sources */,
 				DA5C16C61704C9C5002B8FAC /* Compositor+Ext.m in Sources */,
 				DA5C16C91704C9DF002B8FAC /* Composition+Ext.m in Sources */,
 				DA5C16CC1704C9F6002B8FAC /* Instrument+Ext.m in Sources */,
 				DA5C16CF1704CA0D002B8FAC /* Settings+Ext.m in Sources */,
+				DA9B9ADE170568FE0049B8A0 /* CachedData+Ext.m in Sources */,
+				DA9B9AE117056A790049B8A0 /* CachedData.m in Sources */,
+				DA9B9AE417056A980049B8A0 /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

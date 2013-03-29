@@ -11,4 +11,5 @@
 @interface Instrument (Ext)
 + (Instrument *) syncFromDict: (NSDictionary *) dict;
 - (void) deleteWithChilds;
++ (void) save;
 @end

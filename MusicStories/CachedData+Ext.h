@@ -8,6 +8,6 @@
 
 #import "CachedData.h"
 
-@interface CachedData_Ext : CachedData
+@interface CachedData (Ext)
 
 @end

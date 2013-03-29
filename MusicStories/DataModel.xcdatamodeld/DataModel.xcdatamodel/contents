@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CachedData" representedClassName="CachedData" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="linkSettings" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Settings" inverseName="listCachedData" inverseEntity="Settings" syncable="YES"/>
+    </entity>
     <entity name="Composition" representedClassName="Composition" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="linkCompositor" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Compositor" inverseName="listCompositions" inverseEntity="Compositor" syncable="YES"/>
@@ -20,11 +25,13 @@
         <attribute name="lastDateUpdate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="lastOpened" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="lastUpdate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="listCachedData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CachedData" inverseName="linkSettings" inverseEntity="CachedData" syncable="YES"/>
     </entity>
     <elements>
         <element name="Composition" positionX="-351" positionY="-276" width="128" height="88"/>
         <element name="Compositor" positionX="-99" positionY="-450" width="128" height="73"/>
         <element name="Instrument" positionX="-81" positionY="-99" width="128" height="118"/>
-        <element name="Settings" positionX="-117" positionY="86" width="128" height="90"/>
+        <element name="Settings" positionX="-371" positionY="-108" width="128" height="103"/>
+        <element name="CachedData" positionX="-360" positionY="36" width="128" height="88"/>
     </elements>
 </model>

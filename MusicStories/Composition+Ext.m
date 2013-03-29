@@ -27,7 +27,7 @@
                 [instrument setLinkComposition:composition];
             }
         }
-    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+    [Composition save];
     return composition;
 }
 - (void) deleteWithChilds
@@ -35,6 +35,10 @@
     for (Instrument *instrument in self.listInstuments)
         [instrument deleteWithChilds];
     [self MR_deleteEntity];
+    [Composition save];
+}
++ (void) save
+{
     [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
 }
 @end

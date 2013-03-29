@@ -12,6 +12,8 @@
 
 @interface MSUWebViewViewController ()
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
+@property (strong, nonatomic) NSURLConnection *urlconnection;
+@property (strong, nonatomic) NSMutableData *responseData;
 @end
 
 @implementation MSUWebViewViewController
@@ -25,8 +27,59 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.instrument.url]]];
+    [self webViewDidStartLoad:self.webView];
+    [self loadWebView];
+    //[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.instrument.url]]];
 	// Do any additional setup after loading the view.
+}
+
+- (void) loadWebView
+{
+    NSData *dataFromCache = [Settings dataFromCacheForURL:self.instrument.url];
+    if (dataFromCache)
+        [self.webView loadData:dataFromCache MIMEType:@"application/pdf" textEncodingName:@"utf-8" baseURL:nil];
+    else
+    {
+        self.responseData = [NSMutableData data];
+        NSURLRequest *request = [NSURLRequest requestWithURL:
+                                 [NSURL URLWithString:self.instrument.url]];
+        self.urlconnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    }
+}
+
+- (void) reloadWebView
+{
+    [Settings clearDataFromCacheForURL:self.instrument.url];
+    self.responseData = [NSMutableData data];
+    NSURLRequest *request = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:self.instrument.url]];
+    self.urlconnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    //clear responseData on response
+    [self.responseData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    //append new data to responseData
+    [self.responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    //alert view to show error to user, and stop visualizing refreshing on error
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Network error" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    [Settings saveDataInCacheFromURL:self.instrument.url :self.responseData];
+    [self loadWebView];
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -38,8 +91,8 @@
 - (void) configureNavigationBar
 {
     UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadWebView:)];
-    UIBarButtonItem *stop = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopLoading:)];
-    [self.navigationItem setRightBarButtonItems:@[refresh, stop] animated:YES];
+    UIBarButtonItem *trash = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clearCache:)];
+    [self.navigationItem setRightBarButtonItems:@[refresh, trash] animated:YES];
     [self.navigationItem setTitle:self.instrument.linkComposition.name];
 }
 
@@ -59,7 +112,7 @@
 {
     if (!self.spinner)
     {
-        CGRect frame = [self.webView frame];
+        CGRect frame = [self.view frame];
         self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [self.spinner setColor:[UIColor grayColor]];
         self.spinner.frame = frame;
@@ -72,7 +125,7 @@
 {
     [self.spinner stopAnimating];
     [[Settings settings] setLastOpened:self.instrument.id];
-    [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+    [Settings save];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -98,12 +151,13 @@
 
 - (void) reloadWebView: (id) sender
 {
-    [self.webView reload];
+    [self reloadWebView];
 }
 
-- (void) stopLoading: (id) sender
+- (void) clearCache: (id) sender
 {
-    [self.webView stopLoading];
+    //TODO alert
+    [Settings clearCache];
 }
 
 @end
