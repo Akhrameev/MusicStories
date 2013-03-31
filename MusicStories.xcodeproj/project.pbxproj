@@ -138,6 +138,19 @@
 		DA9B9BF4170624720049B8A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9B9BF3170624720049B8A0 /* SystemConfiguration.framework */; };
 		DA9B9BF6170624850049B8A0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9B9BF5170624850049B8A0 /* Security.framework */; };
 		DA9B9BF81706249A0049B8A0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9B9BF71706249A0049B8A0 /* MessageUI.framework */; };
+		DAC98CE717087737005A9D73 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CE617087737005A9D73 /* MBProgressHUD.m */; };
+		DAC98CEF170877AE005A9D73 /* NSString+Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CEA170877AE005A9D73 /* NSString+Gender.m */; };
+		DAC98CF0170877AE005A9D73 /* Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CEC170877AE005A9D73 /* Vkontakte.m */; };
+		DAC98CF1170877AE005A9D73 /* VkontakteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CEE170877AE005A9D73 /* VkontakteViewController.m */; };
+		DAC98D00170880E8005A9D73 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = DAC98CF7170880E8005A9D73 /* LICENSE.txt */; };
+		DAC98D01170880E8005A9D73 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CF9170880E8005A9D73 /* NSString+MD5.m */; };
+		DAC98D02170880E8005A9D73 /* PDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CFB170880E8005A9D73 /* PDFView.m */; };
+		DAC98D03170880E8005A9D73 /* UIImage+PDF.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CFD170880E8005A9D73 /* UIImage+PDF.m */; };
+		DAC98D04170880E8005A9D73 /* UIView+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CFF170880E8005A9D73 /* UIView+Image.m */; };
+		DAC98D071708864B005A9D73 /* icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC98D051708864B005A9D73 /* icon-Small.png */; };
+		DAC98D081708864B005A9D73 /* icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC98D061708864B005A9D73 /* icon-Small@2x.png */; };
+		DAC98D0B17088B61005A9D73 /* icon-Small-off.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC98D0917088B61005A9D73 /* icon-Small-off.png */; };
+		DAC98D0C17088B61005A9D73 /* icon-Small-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC98D0A17088B61005A9D73 /* icon-Small-off@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -385,6 +398,27 @@
 		DA9B9BF3170624720049B8A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DA9B9BF5170624850049B8A0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DA9B9BF71706249A0049B8A0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		DAC98CE517087737005A9D73 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		DAC98CE617087737005A9D73 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		DAC98CE9170877AE005A9D73 /* NSString+Gender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Gender.h"; sourceTree = "<group>"; };
+		DAC98CEA170877AE005A9D73 /* NSString+Gender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Gender.m"; sourceTree = "<group>"; };
+		DAC98CEB170877AE005A9D73 /* Vkontakte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vkontakte.h; sourceTree = "<group>"; };
+		DAC98CEC170877AE005A9D73 /* Vkontakte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vkontakte.m; sourceTree = "<group>"; };
+		DAC98CED170877AE005A9D73 /* VkontakteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VkontakteViewController.h; sourceTree = "<group>"; };
+		DAC98CEE170877AE005A9D73 /* VkontakteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VkontakteViewController.m; sourceTree = "<group>"; };
+		DAC98CF7170880E8005A9D73 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		DAC98CF8170880E8005A9D73 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		DAC98CF9170880E8005A9D73 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		DAC98CFA170880E8005A9D73 /* PDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFView.h; sourceTree = "<group>"; };
+		DAC98CFB170880E8005A9D73 /* PDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFView.m; sourceTree = "<group>"; };
+		DAC98CFC170880E8005A9D73 /* UIImage+PDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PDF.h"; sourceTree = "<group>"; };
+		DAC98CFD170880E8005A9D73 /* UIImage+PDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PDF.m"; sourceTree = "<group>"; };
+		DAC98CFE170880E8005A9D73 /* UIView+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Image.h"; sourceTree = "<group>"; };
+		DAC98CFF170880E8005A9D73 /* UIView+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Image.m"; sourceTree = "<group>"; };
+		DAC98D051708864B005A9D73 /* icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small.png"; sourceTree = "<group>"; };
+		DAC98D061708864B005A9D73 /* icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small@2x.png"; sourceTree = "<group>"; };
+		DAC98D0917088B61005A9D73 /* icon-Small-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small-off.png"; sourceTree = "<group>"; };
+		DAC98D0A17088B61005A9D73 /* icon-Small-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small-off@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,6 +510,10 @@
 				DA5C14A617023B87002B8FAC /* page.png */,
 				DA5C14A717023B87002B8FAC /* viola.png */,
 				DA5C14A817023B87002B8FAC /* violin.png */,
+				DAC98D051708864B005A9D73 /* icon-Small.png */,
+				DAC98D061708864B005A9D73 /* icon-Small@2x.png */,
+				DAC98D0917088B61005A9D73 /* icon-Small-off.png */,
+				DAC98D0A17088B61005A9D73 /* icon-Small-off@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -483,6 +521,9 @@
 		DA5C147B16FF48E4002B8FAC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DAC98CF6170880E8005A9D73 /* UIImage+PDF */,
+				DAC98CE8170877AE005A9D73 /* Vkontakte */,
+				DAC98CE41708771F005A9D73 /* MBProgressHUD */,
 				DA9B9B161706241D0049B8A0 /* ShareKit */,
 				DA9B9AED1705BF990049B8A0 /* IntroductionView */,
 				DA5C165B1704C3BA002B8FAC /* MagicalRecord */,
@@ -1015,6 +1056,44 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		DAC98CE41708771F005A9D73 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				DAC98CE517087737005A9D73 /* MBProgressHUD.h */,
+				DAC98CE617087737005A9D73 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		DAC98CE8170877AE005A9D73 /* Vkontakte */ = {
+			isa = PBXGroup;
+			children = (
+				DAC98CE9170877AE005A9D73 /* NSString+Gender.h */,
+				DAC98CEA170877AE005A9D73 /* NSString+Gender.m */,
+				DAC98CEB170877AE005A9D73 /* Vkontakte.h */,
+				DAC98CEC170877AE005A9D73 /* Vkontakte.m */,
+				DAC98CED170877AE005A9D73 /* VkontakteViewController.h */,
+				DAC98CEE170877AE005A9D73 /* VkontakteViewController.m */,
+			);
+			path = Vkontakte;
+			sourceTree = "<group>";
+		};
+		DAC98CF6170880E8005A9D73 /* UIImage+PDF */ = {
+			isa = PBXGroup;
+			children = (
+				DAC98CF7170880E8005A9D73 /* LICENSE.txt */,
+				DAC98CF8170880E8005A9D73 /* NSString+MD5.h */,
+				DAC98CF9170880E8005A9D73 /* NSString+MD5.m */,
+				DAC98CFA170880E8005A9D73 /* PDFView.h */,
+				DAC98CFB170880E8005A9D73 /* PDFView.m */,
+				DAC98CFC170880E8005A9D73 /* UIImage+PDF.h */,
+				DAC98CFD170880E8005A9D73 /* UIImage+PDF.m */,
+				DAC98CFE170880E8005A9D73 /* UIView+Image.h */,
+				DAC98CFF170880E8005A9D73 /* UIView+Image.m */,
+			);
+			path = "UIImage+PDF";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1086,6 +1165,11 @@
 				DA9B9BCB1706241D0049B8A0 /* SHKSharers.plist in Resources */,
 				DA9B9BD01706241D0049B8A0 /* Localizable.strings in Resources */,
 				DA9B9BD71706241D0049B8A0 /* FBConnect.bundle in Resources */,
+				DAC98D00170880E8005A9D73 /* LICENSE.txt in Resources */,
+				DAC98D071708864B005A9D73 /* icon-Small.png in Resources */,
+				DAC98D081708864B005A9D73 /* icon-Small@2x.png in Resources */,
+				DAC98D0B17088B61005A9D73 /* icon-Small-off.png in Resources */,
+				DAC98D0C17088B61005A9D73 /* icon-Small-off@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1201,6 +1285,14 @@
 				DA9B9BF01706241D0049B8A0 /* SHKOAuthView.m in Sources */,
 				DA9B9BF11706241D0049B8A0 /* SHKShareMenu.m in Sources */,
 				DA9B9BF21706241D0049B8A0 /* SHKViewControllerWrapper.m in Sources */,
+				DAC98CE717087737005A9D73 /* MBProgressHUD.m in Sources */,
+				DAC98CEF170877AE005A9D73 /* NSString+Gender.m in Sources */,
+				DAC98CF0170877AE005A9D73 /* Vkontakte.m in Sources */,
+				DAC98CF1170877AE005A9D73 /* VkontakteViewController.m in Sources */,
+				DAC98D01170880E8005A9D73 /* NSString+MD5.m in Sources */,
+				DAC98D02170880E8005A9D73 /* PDFView.m in Sources */,
+				DAC98D03170880E8005A9D73 /* UIImage+PDF.m in Sources */,
+				DAC98D04170880E8005A9D73 /* UIView+Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

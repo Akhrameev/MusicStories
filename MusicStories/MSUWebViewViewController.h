@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Instrument+Ext.h"
+#import "Vkontakte.h"
 
-@interface MSUWebViewViewController : UIViewController <UIWebViewDelegate>
+@interface MSUWebViewViewController : UIViewController <UIWebViewDelegate, VkontakteDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) Instrument *instrument;
+@property Vkontakte *vkontakte;
 @end

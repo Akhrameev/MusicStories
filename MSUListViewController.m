@@ -301,7 +301,7 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     }
     Composition *composition = [self.targetCompositorCompositions objectAtIndex:indexPath.row];
     //cell.detailTextLabel.text = compositor.name;
-    cell.textLabel.text = composition.name;
+    cell.textLabel.text = composition.name;   
     return cell;
 }
 
