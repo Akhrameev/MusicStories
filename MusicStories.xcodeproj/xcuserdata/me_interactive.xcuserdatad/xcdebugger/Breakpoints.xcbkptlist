@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUWebViewViewController.m"
-         timestampString = "386454774.535587"
+         timestampString = "386456688.406657"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "292"
-         endingLineNumber = "292"
+         startingLineNumber = "297"
+         endingLineNumber = "297"
          landmarkName = "-sendImageToVkontakte:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUWebViewViewController.m"
-         timestampString = "386454773.025948"
+         timestampString = "386456688.406657"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "184"
-         endingLineNumber = "184"
+         startingLineNumber = "189"
+         endingLineNumber = "189"
          landmarkName = "-alertView:clickedButtonAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUWebViewViewController.m"
-         timestampString = "386454774.195797"
+         timestampString = "386456688.406657"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "193"
-         endingLineNumber = "193"
+         startingLineNumber = "198"
+         endingLineNumber = "198"
          landmarkName = "-alertView:clickedButtonAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUWebViewViewController.m"
-         timestampString = "386454854.912788"
+         timestampString = "386456688.406657"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "185"
-         endingLineNumber = "185"
+         startingLineNumber = "190"
+         endingLineNumber = "190"
          landmarkName = "-alertView:clickedButtonAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,12 +60,103 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUWebViewViewController.m"
-         timestampString = "386454856.208602"
+         timestampString = "386456688.406657"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
+         startingLineNumber = "188"
+         endingLineNumber = "188"
          landmarkName = "-alertView:clickedButtonAtIndex:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUWebViewViewController.m"
+         timestampString = "386456342.767305"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "33"
+         endingLineNumber = "33"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUWebViewViewController.m"
+         timestampString = "386456344.602342"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "35"
+         endingLineNumber = "35"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUWebViewViewController.m"
+         timestampString = "386456352.652464"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
+         landmarkName = "-webViewDidStartLoad:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUWebViewViewController.m"
+         timestampString = "386456688.406657"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "162"
+         endingLineNumber = "162"
+         landmarkName = "-webViewDidFinishLoad:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUWebViewViewController.m"
+         timestampString = "386456688.406657"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "169"
+         endingLineNumber = "169"
+         landmarkName = "-webView:didFailLoadWithError:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUWebViewViewController.m"
+         timestampString = "386456512.321834"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
+         landmarkName = "-loadWebView"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUWebViewViewController.m"
+         timestampString = "386456684.236777"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "156"
+         endingLineNumber = "156"
+         landmarkName = "-startSpinning"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -31,7 +31,7 @@
     self.vkontakte = [Vkontakte sharedInstance];
     self.vkontakte.delegate = self;
     [self.webView setScalesPageToFit:YES];
-    [self webViewDidStartLoad:self.webView];
+    [self startSpinning];
     [self loadWebView];
     //[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.instrument.url]]];
 	// Do any additional setup after loading the view.
@@ -140,15 +140,20 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
+    [self startSpinning];
+}
+
+- (void) startSpinning
+{
     if (!self.spinner)
     {
         self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [self.spinner setColor:[UIColor grayColor]];
         [self.webView addSubview:self.spinner];
     }
-    self.spinner.frame = self.view.frame;
+    self.spinner.bounds = self.view.bounds;
     self.spinner.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-
+    
     [self.spinner startAnimating];
 }
 
@@ -219,7 +224,7 @@
 
 - (void) clearCache: (id) sender
 {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Очистить все загруженные ноты?"
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Очистить загруженные ноты?"
                                                    message: nil
                                                   delegate: self
                                          cancelButtonTitle: @"Отменить"
