@@ -126,7 +126,17 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
 
 - (void) clearStoredData: (id) sender
 {
-    //TODO alert
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Очистить список композиций?"
+                                                   message: nil
+                                                  delegate: self
+                                         cancelButtonTitle: @"Отменить"
+                                         otherButtonTitles: @"OK",nil];
+    [alert setTag:1];
+    [alert show];
+}
+
+- (void) clearStoredData
+{
     if (![self.compositors count])
         [self updateCompositors];
     [[Settings settings] setLastUpdate:@(-1)];
@@ -334,6 +344,18 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     else if ([[segue identifier] isEqualToString:@"segueNotes"])
         [segue.destinationViewController setInstrument:self.lastOpenedInstrument];
     [super prepareForSegue:segue sender:sender];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1)
+    {
+        if (buttonIndex == 1)
+        {
+            [self clearStoredData];
+        }
+        return;
+    }
 }
 
 - (NSString *)stringByDecodingHTMLEntitiesInString:(NSString *)input {

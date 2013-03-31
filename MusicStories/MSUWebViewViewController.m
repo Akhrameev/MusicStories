@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
 @property (strong, nonatomic) NSURLConnection *urlconnection;
 @property (strong, nonatomic) NSMutableData *responseData;
+@property (strong, nonatomic) NSDictionary *userInfo;
 @end
 
 @implementation MSUWebViewViewController
@@ -93,29 +94,35 @@
 
 - (void) configureNavigationBar
 {
-    UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadWebView:)];
+    //UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadWebView:)];
     UIBarButtonItem *trash = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clearCache:)];
-    
-    UIButton *buttonVK =  [UIButton buttonWithType:UIButtonTypeCustom];
-    [buttonVK setImage:[UIImage imageNamed:@"icon-Small"] forState:UIControlStateNormal];
+    UIBarButtonItem *vklogin = nil;
     if (self.vkontakte.isAuthorized)
     {
-        [buttonVK setImage:[UIImage imageNamed:@"icon-Small"] forState:UIControlStateNormal];
-        [self.vkontakte getUserInfo];
+        if (!self.userInfo)
+            [self.vkontakte getUserInfo];
+        NSString *name = @"Выйти";
+        if (self.userInfo)
+        {
+            NSString *firstName = [self.userInfo objectForKey:@"first_name"];
+            NSString *lastName = [self.userInfo objectForKey:@"last_name"];
+            name = [[firstName stringByAppendingString:@" "] stringByAppendingString:lastName];
+        }
+        vklogin = [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStyleBordered target:self action:@selector(vkLogin:)];
+        [vklogin setTintColor:[self vkBlueColor]];
     }
     else
-        [buttonVK setImage:[UIImage imageNamed:@"icon-Small-off"] forState:UIControlStateNormal];
-    [buttonVK addTarget:self action:@selector(vkLogin:) forControlEvents:UIControlEventTouchUpInside];
-    [buttonVK setFrame:CGRectMake(280, 25, 30, 30)];
-    UIBarButtonItem *vklogin = [[UIBarButtonItem alloc] initWithCustomView:buttonVK];
+    {
+        vklogin = [[UIBarButtonItem alloc] initWithTitle:@"Войти вконтакте" style:UIBarButtonItemStyleBordered target:self action:@selector(vkLogin:)];
+    }
     if (self.vkontakte.isAuthorized)
     {
         UIBarButtonItem *share = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendImageToVkontakte:)];
-        [share setTintColor:[UIColor colorWithRed:40/255.0 green:106/255.0 blue:161/255.0 alpha:0.5]];
-        [self.navigationItem setRightBarButtonItems:@[refresh, trash, vklogin, share] animated:YES];
+        [share setTintColor:[self vkBlueColor]];
+        [self.navigationItem setRightBarButtonItems:@[/*refresh,*/ trash, share, vklogin] animated:YES];
     }
     else
-        [self.navigationItem setRightBarButtonItems:@[refresh, trash, vklogin] animated:YES];
+        [self.navigationItem setRightBarButtonItems:@[/*refresh,*/ trash, vklogin] animated:YES];
     [self.navigationItem setTitle:self.instrument.linkComposition.name];
 }
 
@@ -140,6 +147,8 @@
         [self.webView addSubview:self.spinner];
     }
     self.spinner.frame = self.view.frame;
+    self.spinner.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
     [self.spinner startAnimating];
 }
 
@@ -168,6 +177,22 @@
     {
         if (buttonIndex == 0)
             [self reloadWebView:self];
+        return;
+    }
+    if (alertView.tag == 2)
+    {
+        if (buttonIndex == 1)
+        {
+            [self.vkontakte logout];
+            self.userInfo = nil;
+        }
+        return;
+    }
+    if (alertView.tag == 3)
+    {
+        if (buttonIndex == 1)
+            [Settings clearCache];
+        return;
     }
 }
 
@@ -181,13 +206,26 @@
     if (![self.vkontakte isAuthorized])
         [self.vkontakte authenticate];
     else
-        [self.vkontakte logout];
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Выйти из вконтакте?"
+                                                       message: nil
+                                                      delegate: self
+                                             cancelButtonTitle: @"Отменить"
+                                             otherButtonTitles: @"OK",nil];
+        [alert setTag:2];
+        [alert show];
+    }
 }
 
 - (void) clearCache: (id) sender
 {
-    //TODO alert
-    [Settings clearCache];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Очистить все загруженные ноты?"
+                                                   message: nil
+                                                  delegate: self
+                                         cancelButtonTitle: @"Отменить"
+                                         otherButtonTitles: @"OK",nil];
+    [alert setTag:3];
+    [alert show];
 }
 
 #pragma mark - VkontakteDelegate
@@ -226,7 +264,8 @@
 - (void)vkontakteDidFinishGettinUserInfo:(NSDictionary *)info
 {
     NSLog(@"%@", info);
-    
+    self.userInfo = info;
+    [self configureNavigationBar];
     /*NSString *photoUrl = [info objectForKey:@"photo_big"];
     NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
     _userImage.image = [UIImage imageWithData:photoData];
@@ -250,10 +289,25 @@
     {
         NSString *message = @"Я сейчас играю: ";
         message = [message stringByAppendingString:self.instrument.linkComposition.name];
-        [self.vkontakte postImageToWall:[UIImage imageNamed:@"MusicStories"]
+        message = [message stringByAppendingString:@" (MusicStories for iPad)"];
+        UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+        CGRect rect = [keyWindow bounds];
+        UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        [keyWindow.layer renderInContext:context];
+        UIImage *capturedScreen = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        if (!capturedScreen)
+            capturedScreen = [UIImage imageNamed:@"MS-144"];
+        [self.vkontakte postImageToWall:capturedScreen
                                    text:message
                                    link:[NSURL URLWithString:self.instrument.url]];
     }
 }
 
+
+- (UIColor *) vkBlueColor
+{
+    return [UIColor colorWithRed:69/255.0 green:150/255.0 blue:217/255.0 alpha:1];
+}
 @end
