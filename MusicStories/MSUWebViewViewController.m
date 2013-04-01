@@ -9,6 +9,7 @@
 #import "MSUWebViewViewController.h"
 #import "Settings+Ext.h"
 #import "Composition+Ext.h"
+#import "Compositor+Ext.h"
 #import "VkData+Ext.h"
 #import "UIImage+Resize.h"
 
@@ -299,6 +300,10 @@
     else
     {
         NSString *message = @"Я сейчас играю: ";
+        Compositor *compositor = (Compositor *)self.instrument.linkComposition.linkCompositor;
+        NSString *compositor_name = [compositor name];
+        message = [message stringByAppendingString:compositor_name];
+        message = [message stringByAppendingString:@" - "];
         message = [message stringByAppendingString:self.instrument.linkComposition.name];
         message = [message stringByAppendingString:@" (MusicStories for iPad)"];
         UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
