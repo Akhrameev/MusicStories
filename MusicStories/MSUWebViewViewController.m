@@ -9,12 +9,14 @@
 #import "MSUWebViewViewController.h"
 #import "Settings+Ext.h"
 #import "Composition+Ext.h"
+#import "VkData+Ext.h"
+#import "UIImage+Resize.h"
 
 @interface MSUWebViewViewController ()
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
 @property (strong, nonatomic) NSURLConnection *urlconnection;
 @property (strong, nonatomic) NSMutableData *responseData;
-@property (strong, nonatomic) NSDictionary *userInfo;
+@property (weak, nonatomic) VkData *vkData;
 @end
 
 @implementation MSUWebViewViewController
@@ -99,13 +101,13 @@
     UIBarButtonItem *vklogin = nil;
     if (self.vkontakte.isAuthorized)
     {
-        if (!self.userInfo)
+        if (!self.vkData)
             [self.vkontakte getUserInfo];
         NSString *name = @"Выйти";
-        if (self.userInfo)
+        if (self.vkData)
         {
-            NSString *firstName = [self.userInfo objectForKey:@"first_name"];
-            NSString *lastName = [self.userInfo objectForKey:@"last_name"];
+            NSString *firstName = self.vkData.firstName;
+            NSString *lastName = self.vkData.lastName;
             name = [[firstName stringByAppendingString:@" "] stringByAppendingString:lastName];
         }
         vklogin = [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStyleBordered target:self action:@selector(vkLogin:)];
@@ -119,7 +121,19 @@
     {
         UIBarButtonItem *share = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendImageToVkontakte:)];
         [share setTintColor:[self vkBlueColor]];
-        [self.navigationItem setRightBarButtonItems:@[/*refresh,*/ trash, share, vklogin] animated:YES];
+        if (self.vkData.photo)
+        {
+            UIImage *faceImage = self.vkData.photo;
+            NSInteger height = self.navigationController.navigationBar.frame.size.height - 10;
+            faceImage = [faceImage resizeToSize:CGSizeMake(height, height)];
+            UIButton *face = [UIButton buttonWithType:UIButtonTypeCustom];
+            face.bounds = CGRectMake(0, 0, faceImage.size.width, faceImage.size.height);
+            [face setImage:faceImage forState:UIControlStateNormal];
+            UIBarButtonItem *vkphoto = [[UIBarButtonItem alloc] initWithCustomView:face];
+            [self.navigationItem setRightBarButtonItems:@[/*refresh,*/ trash, share, vkphoto, vklogin] animated:YES];
+        }
+        else
+            [self.navigationItem setRightBarButtonItems:@[/*refresh,*/ trash, share, vklogin] animated:YES];
     }
     else
         [self.navigationItem setRightBarButtonItems:@[/*refresh,*/ trash, vklogin] animated:YES];
@@ -189,7 +203,7 @@
         if (buttonIndex == 1)
         {
             [self.vkontakte logout];
-            self.userInfo = nil;
+            self.vkData = nil;
         }
         return;
     }
@@ -269,16 +283,8 @@
 - (void)vkontakteDidFinishGettinUserInfo:(NSDictionary *)info
 {
     NSLog(@"%@", info);
-    self.userInfo = info;
+    self.vkData = [Settings vkDataWithDict:info];
     [self configureNavigationBar];
-    /*NSString *photoUrl = [info objectForKey:@"photo_big"];
-    NSData *photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoUrl]];
-    _userImage.image = [UIImage imageWithData:photoData];
-    
-    _userName.text = [info objectForKey:@"first_name"];
-    _userSurName.text = [info objectForKey:@"last_name"];
-    _userBDate.text = [info objectForKey:@"bdate"];
-    _userGender.text = [NSString stringWithGenderId:[[info objectForKey:@"sex"] intValue]];*/
 }
 
 - (void)vkontakteDidFinishPostingToWall:(NSDictionary *)responce

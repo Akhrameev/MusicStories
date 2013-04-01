@@ -27,12 +27,27 @@
         <attribute name="lastOpened" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="lastUpdate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="listCachedData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CachedData" inverseName="linkSettings" inverseEntity="CachedData" syncable="YES"/>
+        <relationship name="listVkData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VkData" inverseName="linkSettings" inverseEntity="VkData" syncable="YES"/>
+    </entity>
+    <entity name="VkData" representedClassName="VkData" syncable="YES">
+        <attribute name="bdate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoBigData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="photoBigUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="photoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="sexString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="linkSettings" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Settings" inverseName="listVkData" inverseEntity="Settings" syncable="YES"/>
     </entity>
     <elements>
         <element name="CachedData" positionX="-360" positionY="36" width="128" height="88"/>
         <element name="Composition" positionX="-351" positionY="-276" width="128" height="88"/>
         <element name="Compositor" positionX="-99" positionY="-450" width="128" height="73"/>
         <element name="Instrument" positionX="-81" positionY="-99" width="128" height="118"/>
-        <element name="Settings" positionX="-371" positionY="-108" width="128" height="120"/>
+        <element name="Settings" positionX="-396" positionY="-135" width="128" height="133"/>
+        <element name="VkData" positionX="-605" positionY="-195" width="128" height="208"/>
     </elements>
 </model>

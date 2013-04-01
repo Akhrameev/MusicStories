@@ -16,4 +16,6 @@
 + (void) clearDataFromCacheForURL: (NSString *) url;
 + (void) clearCache;
 + (BOOL) showIntroduction;
++ (VkData *) vkDataWithUid: (NSNumber *) uid;
++ (VkData *) vkDataWithDict: (NSDictionary *) dict;
 @end

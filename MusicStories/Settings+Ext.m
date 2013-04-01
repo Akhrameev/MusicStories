@@ -8,6 +8,8 @@
 
 #import "Settings+Ext.h"
 #import "CachedData+Ext.h"
+#import "VkData+Ext.h"
+#import "NSString+Gender.h"
 
 @implementation Settings (Ext)
 + (Settings *) settings
@@ -88,5 +90,48 @@
     if (days > 50 || days < -50)
         return YES;
     return NO;
+}
++ (VkData *) vkDataWithUid:(NSNumber *)uid
+{
+    return [VkData MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"uid == %@" argumentArray:@[uid]]];
+}
++ (VkData *) vkDataWithDict: (NSDictionary *) dict
+{
+    NSObject *uid = [dict objectForKey:@"uid"];
+    if (![uid isKindOfClass:[NSNumber class]])
+        return nil;
+    VkData *vkData = [Settings vkDataWithUid:(NSNumber *)uid];
+    if (vkData)
+        return vkData;
+    Settings *set = [Settings settings];
+    vkData = [VkData MR_createEntity];
+    NSObject *temp = [dict objectForKey:@"bdata"];
+    if ([temp isKindOfClass:[NSString class]])
+        vkData.bdate = (NSString *)temp;
+    temp = [dict objectForKey:@"first_name"];
+    if ([temp isKindOfClass:[NSString class]])
+        vkData.firstName = (NSString *)temp;
+    temp = [dict objectForKey:@"last_name"];
+    if ([temp isKindOfClass:[NSString class]])
+        vkData.lastName = (NSString *)temp;
+    temp = [dict objectForKey:@"photo"];
+    if ([temp isKindOfClass:[NSString class]])
+        vkData.photoUrl = (NSString *)temp;
+    temp = [dict objectForKey:@"photo_big"];
+    if ([temp isKindOfClass:[NSString class]])
+        vkData.photoBigUrl = (NSString *)temp;
+    temp = [dict objectForKey:@"sex"];
+    if ([temp isKindOfClass:[NSNumber class]])
+    {
+        vkData.sex = (NSNumber *)temp;
+        vkData.sexString = [NSString stringWithGenderId:vkData.sex.integerValue];
+    }
+    temp = [dict objectForKey:@"uid"];
+    if ([temp isKindOfClass:[NSNumber class]])
+        vkData.uid = (NSNumber *)temp;
+    vkData.linkSettings = set;
+    [set addListVkDataObject:vkData];
+    [Settings save];
+    return vkData;
 }
 @end
