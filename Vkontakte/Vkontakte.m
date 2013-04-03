@@ -355,7 +355,18 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
 	NSData *response = [NSURLConnection sendSynchronousRequest:request 
 											 returningResponse:nil 
 														 error:nil];
-	NSString *responseString = [[NSString alloc] initWithData:response 
+    if (!response)
+    {
+        if ([self.delegate respondsToSelector:@selector(vkontakteDidFailedWithError:)])
+        {
+            NSError *error = [NSError errorWithDomain:@"http://api.vk.com/method"
+                                                 code:666
+                                             userInfo:nil];
+            [self.delegate vkontakteDidFailedWithError:error];
+        }
+        return;
+    }
+	NSString *responseString = [[NSString alloc] initWithData:response
                                                      encoding:NSUTF8StringEncoding];
 	NSLog(@"%@",responseString);
     

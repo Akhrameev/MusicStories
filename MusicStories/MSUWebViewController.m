@@ -259,9 +259,24 @@
             capturedScreen = [capturedScreen rotateToDeviceOrientation:[[UIDevice currentDevice] orientation]];
         if (!capturedScreen)
             capturedScreen = [UIImage imageNamed:@"MS-144"];
-        [self.vkontakte postImageToWall:capturedScreen
-                                   text:message
-                                   link:[NSURL URLWithString:self.instrument.url]];
+        __block UIBarButtonItem *button_post = (UIBarButtonItem *)sender;
+        [button_post setEnabled:NO];
+        [button_post setTintColor:[self vkBlueDisabledColor]];
+        //start animating
+        
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self.vkontakte postImageToWall:capturedScreen
+                                       text:message
+                                       link:[NSURL URLWithString:self.instrument.url]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [button_post setEnabled:YES];
+                [button_post setTintColor:[self vkBlueColor]];
+                //stop animating
+            });
+        });
+        //[self.vkontakte postImageToWall:capturedScreen
+        //                           text:message
+        //                           link:[NSURL URLWithString:self.instrument.url]];
     }
 }
 
@@ -325,6 +340,11 @@
 - (UIColor *) vkBlueColor
 {
     return [UIColor colorWithRed:69/255.0 green:150/255.0 blue:217/255.0 alpha:1];
+}
+
+- (UIColor *) vkBlueDisabledColor
+{
+    return [UIColor colorWithRed:69/255.0 green:150/255.0 blue:217/255.0 alpha:0.5];
 }
 
 - (IBAction)backButtonClick:(id)sender
