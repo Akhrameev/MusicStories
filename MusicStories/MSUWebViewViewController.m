@@ -86,7 +86,6 @@
 {
     [Settings saveDataInCacheFromURL:self.instrument.url :self.responseData];
     [self loadWebView];
-    
 }
 
 - (void) viewWillAppear:(BOOL)animated

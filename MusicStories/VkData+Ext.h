@@ -12,4 +12,7 @@
 - (UIImage *) photo;
 - (UIImage *) photoBig;
 + (void) save;
+@property (strong, nonatomic) NSURLConnection *urlconnection;
+@property (strong, nonatomic) NSMutableData *responseData;
+@property NSInteger currentRequestType;
 @end

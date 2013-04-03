@@ -88,7 +88,7 @@
         frame.size.height = 50;
         label = [[UILabel alloc] initWithFrame:frame];
         label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = UITextAlignmentCenter;
+        label.textAlignment = NSTextAlignmentCenter;
         label.font = [label.font fontWithSize:20];
         label.tag = 1;
         [view addSubview:label];

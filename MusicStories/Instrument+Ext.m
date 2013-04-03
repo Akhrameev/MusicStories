@@ -7,13 +7,19 @@
 //
 
 #import "Instrument+Ext.h"
+#import "Settings+Ext.h"
 
 @implementation Instrument (Ext)
 + (Instrument *) syncFromDict: (NSDictionary *) dict
 {
     if (!dict || ![dict count])
         return nil;
-    Instrument *instrument = [Instrument MR_createEntity];
+    NSObject *id_obj = [dict objectForKey:@"id"];
+    if (![id_obj isKindOfClass:[NSNumber class]])
+        return nil;
+    Instrument *instrument = [Instrument MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@" argumentArray:@[(NSNumber *)id_obj]]];
+    if (!instrument)
+        instrument = [Instrument MR_createEntity];
     instrument.url = [dict objectForKey:@"url"];
     instrument.name = [dict objectForKey:@"name"];
     instrument.pic = [dict objectForKey:@"pic"];

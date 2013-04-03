@@ -82,6 +82,11 @@
 		DAC98D16170A1801005A9D73 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D15170A1801005A9D73 /* Settings.m */; };
 		DAC98D19170A1891005A9D73 /* VkData+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D18170A1891005A9D73 /* VkData+Ext.m */; };
 		DAC98D1D170A2C9D005A9D73 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D1C170A2C9D005A9D73 /* UIImage+Resize.m */; };
+		DAC98D21170B715D005A9D73 /* MSUSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D20170B715D005A9D73 /* MSUSplitViewController.m */; };
+		DAC98D24170B71C4005A9D73 /* MSUMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D23170B71C4005A9D73 /* MSUMasterViewController.m */; };
+		DAC98D27170B71D9005A9D73 /* MSUDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D26170B71D9005A9D73 /* MSUDetailViewController.m */; };
+		DAC98D2A170B7258005A9D73 /* MSUWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D29170B7258005A9D73 /* MSUWebViewController.m */; };
+		DAC98D2E170BA6DD005A9D73 /* UIImage+rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D2D170BA6DD005A9D73 /* UIImage+rotate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -215,6 +220,16 @@
 		DAC98D18170A1891005A9D73 /* VkData+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VkData+Ext.m"; sourceTree = "<group>"; };
 		DAC98D1B170A2C9D005A9D73 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		DAC98D1C170A2C9D005A9D73 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		DAC98D1F170B715D005A9D73 /* MSUSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUSplitViewController.h; sourceTree = "<group>"; };
+		DAC98D20170B715D005A9D73 /* MSUSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUSplitViewController.m; sourceTree = "<group>"; };
+		DAC98D22170B71C4005A9D73 /* MSUMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUMasterViewController.h; sourceTree = "<group>"; };
+		DAC98D23170B71C4005A9D73 /* MSUMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUMasterViewController.m; sourceTree = "<group>"; };
+		DAC98D25170B71D9005A9D73 /* MSUDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUDetailViewController.h; sourceTree = "<group>"; };
+		DAC98D26170B71D9005A9D73 /* MSUDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUDetailViewController.m; sourceTree = "<group>"; };
+		DAC98D28170B7258005A9D73 /* MSUWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUWebViewController.h; sourceTree = "<group>"; };
+		DAC98D29170B7258005A9D73 /* MSUWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUWebViewController.m; sourceTree = "<group>"; };
+		DAC98D2C170BA6DD005A9D73 /* UIImage+rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+rotate.h"; sourceTree = "<group>"; };
+		DAC98D2D170BA6DD005A9D73 /* UIImage+rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+rotate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +286,8 @@
 		DA5C145E16FF46ED002B8FAC /* MusicStories */ = {
 			isa = PBXGroup;
 			children = (
+				DAC98D2B170BA6B7005A9D73 /* UIImage+rotate */,
+				DAC98D1E170B713A005A9D73 /* SplittedVersion */,
 				DAC98D1A170A2C6D005A9D73 /* UIImage+resize */,
 				DA5C16C31704C996002B8FAC /* Entities+Ext */,
 				DA5C16B91704C910002B8FAC /* Entities */,
@@ -524,6 +541,30 @@
 			name = "UIImage+resize";
 			sourceTree = "<group>";
 		};
+		DAC98D1E170B713A005A9D73 /* SplittedVersion */ = {
+			isa = PBXGroup;
+			children = (
+				DAC98D1F170B715D005A9D73 /* MSUSplitViewController.h */,
+				DAC98D20170B715D005A9D73 /* MSUSplitViewController.m */,
+				DAC98D22170B71C4005A9D73 /* MSUMasterViewController.h */,
+				DAC98D23170B71C4005A9D73 /* MSUMasterViewController.m */,
+				DAC98D25170B71D9005A9D73 /* MSUDetailViewController.h */,
+				DAC98D26170B71D9005A9D73 /* MSUDetailViewController.m */,
+				DAC98D28170B7258005A9D73 /* MSUWebViewController.h */,
+				DAC98D29170B7258005A9D73 /* MSUWebViewController.m */,
+			);
+			name = SplittedVersion;
+			sourceTree = "<group>";
+		};
+		DAC98D2B170BA6B7005A9D73 /* UIImage+rotate */ = {
+			isa = PBXGroup;
+			children = (
+				DAC98D2C170BA6DD005A9D73 /* UIImage+rotate.h */,
+				DAC98D2D170BA6DD005A9D73 /* UIImage+rotate.m */,
+			);
+			name = "UIImage+rotate";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -654,6 +695,11 @@
 				DAC98D16170A1801005A9D73 /* Settings.m in Sources */,
 				DAC98D19170A1891005A9D73 /* VkData+Ext.m in Sources */,
 				DAC98D1D170A2C9D005A9D73 /* UIImage+Resize.m in Sources */,
+				DAC98D21170B715D005A9D73 /* MSUSplitViewController.m in Sources */,
+				DAC98D24170B71C4005A9D73 /* MSUMasterViewController.m in Sources */,
+				DAC98D27170B71D9005A9D73 /* MSUDetailViewController.m in Sources */,
+				DAC98D2A170B7258005A9D73 /* MSUWebViewController.m in Sources */,
+				DAC98D2E170BA6DD005A9D73 /* UIImage+rotate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

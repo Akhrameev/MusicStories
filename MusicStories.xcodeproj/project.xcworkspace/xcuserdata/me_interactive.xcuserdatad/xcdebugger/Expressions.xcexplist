@@ -3,6 +3,45 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[MSUWebViewController configureNavigationBar]:MSUWebViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUWebViewViewController configureNavigationBar]:MSUWebViewViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUDetailViewController viewWillAppear:]:MSUDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[VkData(Ext) photo]:VkData+Ext.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUDetailViewController numberOfItemsInCarousel:]:MSUDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUListViewController connectionDidFinishLoading:]:MSUListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[connection description]">
+            </PersistentString>
+            <PersistentString
+               value = "[[connection currentRequest] URL]">
+            </PersistentString>
+            <PersistentString
+               value = "connection.currentRequest.URL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[MSUListViewController connectionDidFinishLoadingDate:]:MSUListViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -11,16 +50,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[MSUListViewController connectionDidFinishLoading:]:MSUListViewController.m">
+         contextName = "-[MSUDetailViewController setComposition:]:MSUDetailViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "connection.currentRequest.URL">
-            </PersistentString>
-            <PersistentString
-               value = "[[connection currentRequest] URL]">
-            </PersistentString>
-            <PersistentString
-               value = "[connection description]">
+               value = "[self.carousel viewWithTag:1]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
