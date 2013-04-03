@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Instrument+Ext.h"
+#import "MSUSplitViewController.h"
 @class MSUDetailViewController;
-@interface MSUMasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MSUMasterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, instrumentForSegueDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (strong, nonatomic) MSUDetailViewController *detailViewController;
+@property (strong, nonatomic) Instrument *lastOpenedInstrument;
 @end

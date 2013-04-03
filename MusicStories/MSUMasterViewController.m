@@ -61,6 +61,30 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
         [self refreshView: self.refreshControl];
     }
 #endif
+    if ([self.compositors count])
+    {
+        if (!self.lastOpenedInstrument)
+            [self updateLastOpenedInstrument];
+        if (self.lastOpenedInstrument)
+        {
+            self.composition = self.lastOpenedInstrument.linkComposition;
+            [self.detailViewController setComposition:self.composition];
+        }
+    }
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    if (!self.lastOpenedInstrument)
+        [self updateLastOpenedInstrument];
+    [self configureNavigationBar];
+    [super viewWillAppear:animated];
+}
+
+- (void) updateLastOpenedInstrument
+{
+    NSNumber *lastOpenedId = [[Settings settings] lastOpened];
+    self.lastOpenedInstrument = [Instrument MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@" argumentArray:@[lastOpenedId]]];
 }
 
 - (BOOL) shouldAutorotate
@@ -225,10 +249,15 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     Composition *composition = [self.targetCompositorCompositions objectAtIndex:indexPath.row];
     //cell.detailTextLabel.text = compositor.name;
     cell.textLabel.text = composition.name;
-    if ([self.composition isEqual: composition])
+    /*if ([self.composition isEqual: composition])
         [cell setSelected:YES];
     else
-        [cell setSelected:NO];
+    {
+        if (!self.composition && [self.lastOpenedInstrument.linkComposition isEqual:composition])
+            [cell setSelected:YES];
+        else
+            [cell setSelected:NO];
+    }*/
     return cell;
 }
 
@@ -302,6 +331,20 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     [self.table reloadData];
     [self.refreshControl beginRefreshing];
     [self refreshView: self.refreshControl];
+}
+
+- (void) lastOpenedClick: (id) sender
+{
+    if (!self.lastOpenedInstrument)
+        [self updateLastOpenedInstrument];
+    if (!self.lastOpenedInstrument)
+        return;
+    [self.splitViewController performSegueWithIdentifier:@"segueNotes" sender:self];
+}
+
+- (Instrument *) instrumentForSegue
+{
+    return self.lastOpenedInstrument;
 }
 
 @end

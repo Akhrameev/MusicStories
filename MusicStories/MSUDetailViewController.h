@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSUSplitViewController.h"
 #import "iCarousel.h"
 #import "Composition+Ext.h"
 
-@interface MSUDetailViewController : UIViewController <UISplitViewControllerDelegate, iCarouselDataSource, iCarouselDelegate>
+@interface MSUDetailViewController : UIViewController <UISplitViewControllerDelegate, iCarouselDataSource, iCarouselDelegate, instrumentForSegueDelegate>
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (weak, nonatomic) Composition *composition;
 @end

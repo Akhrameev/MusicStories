@@ -212,4 +212,9 @@
     [super prepareForSegue:segue sender:sender];
 }
 
+- (Instrument *) instrumentForSegue
+{
+    return self.instrument;
+}
+
 @end

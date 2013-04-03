@@ -3,43 +3,30 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[MSUWebViewController configureNavigationBar]:MSUWebViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.navigationItem">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[MSUWebViewController configureToolbar]:MSUWebViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[MSUWebViewViewController configureNavigationBar]:MSUWebViewViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[MSUDetailViewController viewWillAppear:]:MSUDetailViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.view">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[VkData(Ext) photo]:VkData+Ext.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[MSUDetailViewController numberOfItemsInCarousel:]:MSUDetailViewController.m">
-      </ContextState>
-      <ContextState
          contextName = "-[MSUListViewController connectionDidFinishLoading:]:MSUListViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[connection description]">
+               value = "connection.currentRequest.URL">
             </PersistentString>
             <PersistentString
                value = "[[connection currentRequest] URL]">
             </PersistentString>
             <PersistentString
-               value = "connection.currentRequest.URL">
+               value = "[connection description]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUWebViewController viewDidLoad]:MSUWebViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUSplitViewController prepareForSegue:sender:]:MSUSplitViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[MSUListViewController connectionDidFinishLoadingDate:]:MSUListViewController.m">
@@ -50,10 +37,46 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[VkData(Ext) photo]:VkData+Ext.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUDetailViewController numberOfItemsInCarousel:]:MSUDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUDetailViewController viewWillAppear:]:MSUDetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUWebViewController loadWebView]:MSUWebViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[Vkontakte authenticate]:Vkontakte.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "vkontakteViewController.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[MSUDetailViewController setComposition:]:MSUDetailViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "[self.carousel viewWithTag:1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUMasterViewController viewDidLoad]:MSUMasterViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MSUWebViewController configureNavigationBar]:MSUWebViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationItem">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

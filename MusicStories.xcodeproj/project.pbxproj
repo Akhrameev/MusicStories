@@ -286,6 +286,7 @@
 		DA5C145E16FF46ED002B8FAC /* MusicStories */ = {
 			isa = PBXGroup;
 			children = (
+				DAC98D2F170CB759005A9D73 /* PreviousVersion */,
 				DAC98D2B170BA6B7005A9D73 /* UIImage+rotate */,
 				DAC98D1E170B713A005A9D73 /* SplittedVersion */,
 				DAC98D1A170A2C6D005A9D73 /* UIImage+resize */,
@@ -294,12 +295,6 @@
 				DA5C147F16FF93BD002B8FAC /* iCarousel */,
 				DA5C146716FF46ED002B8FAC /* MSUAppDelegate.h */,
 				DA5C146816FF46ED002B8FAC /* MSUAppDelegate.m */,
-				DA5C148916FF95A2002B8FAC /* MSUListViewController.h */,
-				DA5C148A16FF95A2002B8FAC /* MSUListViewController.m */,
-				DA5C148316FF94AB002B8FAC /* MSUCarouselViewController.h */,
-				DA5C148416FF94AB002B8FAC /* MSUCarouselViewController.m */,
-				DA5C14931700EB26002B8FAC /* MSUWebViewViewController.h */,
-				DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */,
 				DA5C147016FF46EE002B8FAC /* MainStoryboard.storyboard */,
 				DA5C16B31704C490002B8FAC /* DataModel.xcdatamodeld */,
 				DA5C145F16FF46ED002B8FAC /* Supporting Files */,
@@ -563,6 +558,19 @@
 				DAC98D2D170BA6DD005A9D73 /* UIImage+rotate.m */,
 			);
 			name = "UIImage+rotate";
+			sourceTree = "<group>";
+		};
+		DAC98D2F170CB759005A9D73 /* PreviousVersion */ = {
+			isa = PBXGroup;
+			children = (
+				DA5C148916FF95A2002B8FAC /* MSUListViewController.h */,
+				DA5C148A16FF95A2002B8FAC /* MSUListViewController.m */,
+				DA5C148316FF94AB002B8FAC /* MSUCarouselViewController.h */,
+				DA5C148416FF94AB002B8FAC /* MSUCarouselViewController.m */,
+				DA5C14931700EB26002B8FAC /* MSUWebViewViewController.h */,
+				DA5C14941700EB26002B8FAC /* MSUWebViewViewController.m */,
+			);
+			name = PreviousVersion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

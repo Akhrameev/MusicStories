@@ -108,6 +108,7 @@
     {
         if (buttonIndex == 0)
             [self reloadWebView:self];
+        [self.spinner stopAnimating];
         return;
     }
     if (alertView.tag == 2)
@@ -123,6 +124,11 @@
     {
         if (buttonIndex == 1)
             [Settings clearDataFromCacheForURL: self.instrument.url];
+        return;
+    }
+    if (alertView.tag == 4)
+    {
+        [self.spinner stopAnimating];
         return;
     }
 }
@@ -156,7 +162,8 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     //alert view to show error to user, and stop visualizing refreshing on error
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Network error" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Network error" message:[error description] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert setTag:4];
     [alert show];
 }
 

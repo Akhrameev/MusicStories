@@ -12,3 +12,7 @@
 @interface MSUSplitViewController : UISplitViewController
 @property (strong, nonatomic) Instrument *instrument;
 @end
+
+@protocol instrumentForSegueDelegate
+- (Instrument *) instrumentForSegue;
+@end

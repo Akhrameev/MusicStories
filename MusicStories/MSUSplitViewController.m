@@ -8,6 +8,7 @@
 
 #import "MSUSplitViewController.h"
 #import "MSUDetailViewController.h"
+#import "MSUMasterViewController.h"
 
 @interface MSUSplitViewController ()
 @end
@@ -41,7 +42,7 @@
 {
     if ([[segue identifier] isEqualToString:@"segueNotes"])
     {
-        self.instrument = [sender instrument];
+        self.instrument = [sender instrumentForSegue];
         [segue.destinationViewController setInstrument:self.instrument];
     }
     [super prepareForSegue:segue sender:sender];

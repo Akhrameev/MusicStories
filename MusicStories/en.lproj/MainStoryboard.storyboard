@@ -111,7 +111,6 @@
         <!--Navigation Controller-->
         <scene sceneID="HLA-HQ-t9b">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SAz-wG-GyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="gyX-at-ccb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BPN-6D-BGA">
                         <autoresizingMask key="autoresizingMask"/>
@@ -120,6 +119,7 @@
                         <segue destination="tlm-r7-3Rb" kind="relationship" relationship="rootViewController" id="pdK-0Q-4WQ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SAz-wG-GyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="852" y="-1993"/>
         </scene>
@@ -177,16 +177,16 @@
         <!--Split View Controller-->
         <scene sceneID="ccs-EU-Jr5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jo7-Gf-22J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <splitViewController id="8p7-Nj-ttH" customClass="MSUSplitViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tAE-tF-kz1"/>
                     <connections>
                         <segue destination="gyX-at-ccb" kind="relationship" relationship="masterViewController" id="Oi5-hG-Cbo"/>
                         <segue destination="yGU-9A-t6d" kind="relationship" relationship="detailViewController" id="V8P-FX-eos"/>
-                        <segue destination="547-lY-Zeg" kind="modal" identifier="segueNotes" modalPresentationStyle="fullScreen" id="MP9-4x-IyY"/>
+                        <segue destination="547-lY-Zeg" kind="modal" identifier="segueNotes" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="MP9-4x-IyY"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jo7-Gf-22J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-124" y="-1528"/>
         </scene>
