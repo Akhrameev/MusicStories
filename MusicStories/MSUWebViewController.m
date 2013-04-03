@@ -270,7 +270,7 @@
     //UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadWebView:)];
     UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@"Назад" style:UIBarButtonItemStyleBordered target:self action:@selector(backButtonClick:)];
     UIBarButtonItem *spacer1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0 , 11.0f, self.view.frame.size.width, 21.0f)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0 , 11.0f, self.view.frame.size.width/2, 21.0f)];
     [titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
     [titleLabel setBackgroundColor:[UIColor clearColor]];
     [titleLabel setTextColor:[UIColor colorWithRed:157.0/255.0 green:157.0/255.0 blue:157.0/255.0 alpha:1.0]];
@@ -308,16 +308,18 @@
             NSInteger height = /*self.toolbar.frame.size.height*/ 44 - 10;
             faceImage = [faceImage resizeToSize:CGSizeMake(height, height)];
             UIButton *face = [UIButton buttonWithType:UIButtonTypeCustom];
+            [face setShowsTouchWhenHighlighted:NO];
+            [face setUserInteractionEnabled:NO];
             face.bounds = CGRectMake(0, 0, faceImage.size.width, faceImage.size.height);
             [face setImage:faceImage forState:UIControlStateNormal];
             UIBarButtonItem *vkphoto = [[UIBarButtonItem alloc] initWithCustomView:face];
-            [self.toolbar setItems:@[back, spacer1, title, spacer2, /*refresh,*/ trash, vkphoto, vklogin, share] animated:YES];
+            [self.toolbar setItems:@[back, spacer1, title, spacer2, /*refresh,*/ vkphoto, vklogin, share, trash] animated:YES];
         }
         else
-            [self.toolbar setItems:@[back, spacer1, title, spacer2, /*refresh,*/ trash, vklogin, share] animated:YES];
+            [self.toolbar setItems:@[back, spacer1, title, spacer2, /*refresh,*/ vklogin, share, trash] animated:YES];
     }
     else
-        [self.toolbar setItems:@[back, spacer1, title, spacer2, /*refresh,*/ trash, vklogin] animated:YES];
+        [self.toolbar setItems:@[back, spacer1, title, spacer2, /*refresh,*/ vklogin, trash] animated:YES];
 }
 
 - (UIColor *) vkBlueColor
