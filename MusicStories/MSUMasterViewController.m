@@ -75,8 +75,35 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    static NSInteger isInitialSelection = YES;
     if (!self.lastOpenedInstrument)
         [self updateLastOpenedInstrument];
+    if ((isInitialSelection != 0) && self.lastOpenedInstrument)
+    {
+        Composition *selectedComposition = self.lastOpenedInstrument.linkComposition;
+        Compositor *selectedCompositor = (Compositor *)selectedComposition.linkCompositor;
+        NSInteger section = 0;
+        NSInteger row = 0;
+        for (Compositor *compositor in self.compositors)
+        {
+            if ([compositor isEqual:selectedCompositor])
+            {
+                if (![compositor isEqual:self.targetCompositor] || !self.targetCompositorCompositions)
+                {
+                    self.targetCompositor = compositor;
+                    self.targetCompositorCompositions = [compositor.listCompositions sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+                }
+                for (Composition *compositionIt in self.targetCompositorCompositions)
+                {
+                    if ([compositionIt isEqual:selectedComposition])
+                        [self.table selectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:section] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+                    ++row;
+                }
+            }
+            ++section;
+        }
+    }
+    isInitialSelection = 0;
     [self configureNavigationBar];
     [super viewWillAppear:animated];
 }
@@ -249,15 +276,6 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     Composition *composition = [self.targetCompositorCompositions objectAtIndex:indexPath.row];
     //cell.detailTextLabel.text = compositor.name;
     cell.textLabel.text = composition.name;
-    /*if ([self.composition isEqual: composition])
-        [cell setSelected:YES];
-    else
-    {
-        if (!self.composition && [self.lastOpenedInstrument.linkComposition isEqual:composition])
-            [cell setSelected:YES];
-        else
-            [cell setSelected:NO];
-    }*/
     return cell;
 }
 

@@ -59,7 +59,7 @@
 
 - (void) swipeEnded: (UISwipeGestureRecognizer *) recognizer
 {
-    NSLog(@"Swipe: %d\n", (NSInteger)recognizer.state);
+    //NSLog(@"Swipe: %d\n", (NSInteger)recognizer.state);
 }
 
 @end
