@@ -207,6 +207,11 @@ iCarouselOption;
 
 - (void)reloadData;
 
+
+
+
+- (void)didPan:(UIPanGestureRecognizer *)panGesture;
+
 @end
 
 
