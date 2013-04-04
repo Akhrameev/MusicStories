@@ -305,7 +305,10 @@
     if (self.vkontakte.isAuthorized)
     {
         if (!self.vkData)
-            [self.vkontakte getUserInfo];
+        {
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                [self.vkontakte getUserInfo];});
+        }
         NSString *name = @"Выйти";
         if (self.vkData)
         {

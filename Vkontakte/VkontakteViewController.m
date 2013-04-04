@@ -66,12 +66,14 @@
     
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Отмена" 
                                                                               style:UIBarButtonItemStyleBordered 
                                                                              target:self 
                                                                              action:@selector(cancelButtonPressed:)];
     CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     _webView = [[UIWebView alloc] initWithFrame:frame];
+    [_webView setScalesPageToFit:YES];
+    [_webView setMultipleTouchEnabled:YES];
     _webView.autoresizesSubviews = YES;
     _webView.autoresizingMask=(UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
     _webView.delegate = self;

@@ -271,7 +271,6 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     VkontakteViewController *vkontakteViewController = [[VkontakteViewController alloc] initWithAuthLink:url];
     vkontakteViewController.delegate = self;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vkontakteViewController];
-    
     if (self.delegate && [self.delegate respondsToSelector:@selector(showVkontakteAuthController:)]) 
     {
         [self.delegate showVkontakteAuthController:navController];

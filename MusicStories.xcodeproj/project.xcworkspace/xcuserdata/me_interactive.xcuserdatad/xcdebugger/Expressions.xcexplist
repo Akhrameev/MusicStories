@@ -57,6 +57,9 @@
          contextName = "-[Vkontakte authenticate]:Vkontakte.m">
          <PersistentStrings>
             <PersistentString
+               value = "navController.topViewController.view">
+            </PersistentString>
+            <PersistentString
                value = "vkontakteViewController.view">
             </PersistentString>
          </PersistentStrings>
