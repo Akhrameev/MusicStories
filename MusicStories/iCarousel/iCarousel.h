@@ -211,6 +211,7 @@ iCarouselOption;
 
 
 - (void)didPan:(UIPanGestureRecognizer *)panGesture;
+- (void)didTap:(UITapGestureRecognizer *)tapGesture;
 
 @end
 

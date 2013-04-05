@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUDetailViewController.m"
-         timestampString = "386706941.317447"
+         timestampString = "386810789.401947"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "204"
-         endingLineNumber = "204"
+         startingLineNumber = "225"
+         endingLineNumber = "225"
          landmarkName = "-carousel:didSelectItemAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -554,11 +554,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUCarouselContainerView.m"
-         timestampString = "386808302.974905"
+         timestampString = "386811161.61857"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
          landmarkName = "-panEnded:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -606,11 +606,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/iCarousel/iCarousel.m"
-         timestampString = "386804124.056505"
+         timestampString = "386812339.406174"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "2066"
-         endingLineNumber = "2066"
+         startingLineNumber = "2065"
+         endingLineNumber = "2065"
          landmarkName = "-gestureRecognizer:shouldReceiveTouch:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -619,11 +619,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/iCarousel/iCarousel.m"
-         timestampString = "386804158.228293"
+         timestampString = "386812339.406174"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "2111"
-         endingLineNumber = "2111"
+         startingLineNumber = "2110"
+         endingLineNumber = "2110"
          landmarkName = "-didPan:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -632,11 +632,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/iCarousel/iCarousel.m"
-         timestampString = "386804320.368361"
+         timestampString = "386812339.406174"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "2077"
-         endingLineNumber = "2077"
+         startingLineNumber = "2076"
+         endingLineNumber = "2076"
          landmarkName = "-gestureRecognizerShouldBegin:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -645,11 +645,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUCarouselContainerView.m"
-         timestampString = "386808302.974905"
+         timestampString = "386811641.657418"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "56"
+         endingLineNumber = "56"
          landmarkName = "-panEnded:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -658,7 +658,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MusicStories/MSUCarouselContainerView.m"
-         timestampString = "386808302.974905"
+         timestampString = "386811641.657418"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "62"
@@ -703,6 +703,97 @@
          startingLineNumber = "93"
          endingLineNumber = "93"
          landmarkName = "-viewWillAppear:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUDetailViewController.m"
+         timestampString = "386810789.401947"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "181"
+         endingLineNumber = "181"
+         landmarkName = "-carousel:viewForItemAtIndex:reusingView:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUDetailViewController.m"
+         timestampString = "386810783.018969"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "68"
+         endingLineNumber = "68"
+         landmarkName = "-configureView"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/iCarousel/iCarousel.m"
+         timestampString = "386812339.406174"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "2096"
+         endingLineNumber = "2096"
+         landmarkName = "-didTap:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUCarouselContainerView.m"
+         timestampString = "386811634.354824"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "67"
+         endingLineNumber = "67"
+         landmarkName = "-tapEnded:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUCarouselContainerView.m"
+         timestampString = "386811639.289638"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "70"
+         endingLineNumber = "70"
+         landmarkName = "-tapEnded:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/iCarousel/iCarousel.m"
+         timestampString = "386812339.406174"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "2034"
+         endingLineNumber = "2034"
+         landmarkName = "-gestureRecognizer:shouldReceiveTouch:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MusicStories/MSUSplitViewController.m"
+         timestampString = "386812335.16201"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "53"
+         endingLineNumber = "53"
+         landmarkName = "-gestureRecognizer:shouldReceiveTouch:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

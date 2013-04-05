@@ -8,12 +8,14 @@
 
 #import "MSUDetailViewController.h"
 #import "Instrument+Ext.h"
+#import "Settings+Ext.h"
 
 @interface MSUDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void) configureView;
 @property (nonatomic, strong) NSArray *arrayInstruments;
 @property (nonatomic, strong) Instrument *instrument;
+@property (nonatomic, strong) Instrument *lastOpenedInstrument;
 @end
 
 @implementation MSUDetailViewController
@@ -34,10 +36,17 @@
     {
         _composition = composition;
         self.arrayInstruments = nil;
+        self.lastOpenedInstrument = nil;
         [self configureView];
     }
     if (self.masterPopoverController != nil)
         [self.masterPopoverController dismissPopoverAnimated:YES];
+}
+
+- (void) updateLastOpenedInstrument
+{
+    NSNumber *lastOpenedId = [[Settings settings] lastOpened];
+    self.lastOpenedInstrument = [Instrument MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"id == %@" argumentArray:@[lastOpenedId]]];
 }
 
 - (void) configureView
@@ -48,6 +57,18 @@
         [self updateArrayInstruments];
     [self configureNavigationBar];
     [self.carousel reloadData];
+    if (!self.lastOpenedInstrument)
+        [self updateLastOpenedInstrument];
+    if ([self.lastOpenedInstrument.linkComposition isEqual:self.composition])
+    {
+        NSInteger index = 0;
+        for (Instrument *instrumentIt in self.arrayInstruments)
+        {
+            if ([instrumentIt isEqual:self.lastOpenedInstrument])
+                [self.carousel scrollToItemAtIndex:index animated:YES];
+            ++index;
+        }
+    }
     [self configureEmptyCarouselView];
 }
 
