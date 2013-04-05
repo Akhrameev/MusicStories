@@ -87,6 +87,17 @@
          contextName = "-[MSUMasterViewController viewDidLoad]:MSUMasterViewController.m">
       </ContextState>
       <ContextState
+         contextName = "-[VkontakteViewController webViewDidFinishLoad:]:VkontakteViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "mach_msg_trap:(null)">
+         <PersistentStrings>
+            <PersistentString
+               value = "webView.request.URL.absoluteString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[MSUWebViewController configureNavigationBar]:MSUWebViewController.m">
          <PersistentStrings>
             <PersistentString

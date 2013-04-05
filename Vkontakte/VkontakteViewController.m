@@ -15,6 +15,7 @@
  */
 
 #import "VkontakteViewController.h"
+#import "Vkontakte.h"
 
 @interface VkontakteViewController (Private)
 - (NSString*)stringBetweenString:(NSString*)start 
@@ -201,7 +202,21 @@
         }
         return NO;
     }
-	NSLog(@"Request: %@", [URL absoluteString]); 
+    NSString *const vkPagePrefix = @"http://vk.com";
+    NSString *const vkPageMobilePrefix = @"http://m.vk.com";
+    NSString *const vkPageMobileSettingsPrefix = @"http://m.vk.com/settings?act=change_regional&";
+    NSString *const iTunesPagePrefix = @"http://itunes.apple.com";
+    if ([[URL absoluteString] length] >= [vkPagePrefix length] && [[[URL absoluteString] substringWithRange: NSMakeRange(0, [vkPagePrefix length])] isEqualToString:vkPagePrefix])
+        return NO;
+    if ([[URL absoluteString] length] >= [vkPageMobilePrefix length] && [[[URL absoluteString] substringWithRange: NSMakeRange(0, [vkPageMobilePrefix length])] isEqualToString:vkPageMobilePrefix])
+    {
+        if ([[URL absoluteString] length] >= [vkPageMobileSettingsPrefix length] && [[[URL absoluteString] substringWithRange: NSMakeRange(0, [vkPageMobileSettingsPrefix length])] isEqualToString:vkPageMobileSettingsPrefix])
+            return YES;
+        return NO;
+    }
+    if ([[[URL absoluteString] substringWithRange: NSMakeRange(0, [iTunesPagePrefix length])] isEqualToString:iTunesPagePrefix])
+        return NO;
+	NSLog(@"Request: %@", [URL absoluteString]);
 	return YES;
 }
 
