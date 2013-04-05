@@ -830,20 +830,12 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Eugeni Valkov";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Evgeny Valkov (T45QJ23AA2)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/MagicalRecord-master/Project Files/iOS App Unit Tests/Frameworks\"",
-					"\"$(SRCROOT)/MagicalRecord-master/Project Files/Mac App Unit Tests/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicStories/MusicStories-Prefix.pch";
 				INFOPLIST_FILE = "MusicStories/MusicStories-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/MagicalRecord-master/Project Files/iOS App Unit Tests/Frameworks/OCMockLibrary\"",
-					"\"$(SRCROOT)/MagicalRecord-master/Project Files/Mac App Unit Tests/Frameworks/OCMockLibrary\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -858,20 +850,12 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Eugeni Valkov";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Evgeny Valkov (T45QJ23AA2)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/MagicalRecord-master/Project Files/iOS App Unit Tests/Frameworks\"",
-					"\"$(SRCROOT)/MagicalRecord-master/Project Files/Mac App Unit Tests/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MusicStories/MusicStories-Prefix.pch";
 				INFOPLIST_FILE = "MusicStories/MusicStories-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/MagicalRecord-master/Project Files/iOS App Unit Tests/Frameworks/OCMockLibrary\"",
-					"\"$(SRCROOT)/MagicalRecord-master/Project Files/Mac App Unit Tests/Frameworks/OCMockLibrary\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

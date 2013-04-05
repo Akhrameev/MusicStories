@@ -5,21 +5,6 @@
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
-        <scene sceneID="htZ-cm-hwX">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="slc-Vz-apL" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="32v-NK-hKW">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="dU8-id-ZzL" kind="relationship" relationship="rootViewController" id="stA-Bn-hvs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xzN-rj-CoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-742" y="-318"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="KuJ-b5-77n">
             <objects>
                 <navigationController definesPresentationContext="YES" id="yGU-9A-t6d" sceneMemberID="viewController">
@@ -190,135 +175,10 @@
             </objects>
             <point key="canvasLocation" x="-124" y="-1528"/>
         </scene>
-        <!--List View Controller - Список композиций-->
-        <scene sceneID="5WE-8Q-1R6">
-            <objects>
-                <viewController id="dU8-id-ZzL" customClass="MSUListViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="M6z-yT-dBr">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="jL8-n6-xfx">
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cellComposition" textLabel="RiA-Wg-28e" style="IBUITableViewCellStyleDefault" id="Oto-Fc-PNG">
-                                        <rect key="frame" x="0.0" y="54" width="768" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="45" y="1" width="678" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiA-Wg-28e">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="dU8-id-ZzL" id="Kgr-Qf-NF1"/>
-                                    <outlet property="delegate" destination="dU8-id-ZzL" id="Nvl-Tp-2QM"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jL8-n6-xfx" firstAttribute="trailing" secondItem="M6z-yT-dBr" secondAttribute="trailing" type="default" id="PIA-BR-mC4"/>
-                            <constraint firstItem="jL8-n6-xfx" firstAttribute="top" secondItem="M6z-yT-dBr" secondAttribute="top" type="default" id="Rhc-og-3v8"/>
-                            <constraint firstItem="jL8-n6-xfx" firstAttribute="bottom" secondItem="M6z-yT-dBr" secondAttribute="bottom" type="default" id="bbX-dd-bjV"/>
-                            <constraint firstItem="jL8-n6-xfx" firstAttribute="leading" secondItem="M6z-yT-dBr" secondAttribute="leading" type="default" id="dZi-GU-Sc6"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Список композиций" id="pcT-i5-aBr"/>
-                    <connections>
-                        <outlet property="table" destination="jL8-n6-xfx" id="vFi-35-jfA"/>
-                        <segue destination="Prl-18-RNX" kind="push" identifier="segueInstrument" id="URW-BE-T6d"/>
-                        <segue destination="ZcS-Ek-iM0" kind="push" identifier="segueNotes" id="cDD-Ng-Q08"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bJk-U3-NoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="487" y="738"/>
-        </scene>
-        <!--Carousel View Controller-->
-        <scene sceneID="ruo-eg-8sR">
-            <objects>
-                <viewController id="Prl-18-RNX" customClass="MSUCarouselViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Usn-Re-Bkp">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9G4-8U-IVg" customClass="iCarousel">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Prl-18-RNX" id="3aL-HY-fll"/>
-                                    <outlet property="delegate" destination="Prl-18-RNX" id="f45-Ep-8Hx"/>
-                                </connections>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="9G4-8U-IVg" firstAttribute="bottom" secondItem="Usn-Re-Bkp" secondAttribute="bottom" type="default" id="2Hc-1T-oee"/>
-                            <constraint firstItem="9G4-8U-IVg" firstAttribute="leading" secondItem="Usn-Re-Bkp" secondAttribute="leading" type="default" id="ULk-WD-PQ2"/>
-                            <constraint firstItem="9G4-8U-IVg" firstAttribute="trailing" secondItem="Usn-Re-Bkp" secondAttribute="trailing" type="default" id="kAr-xe-9OS"/>
-                            <constraint firstItem="9G4-8U-IVg" firstAttribute="top" secondItem="Usn-Re-Bkp" secondAttribute="top" type="default" id="wIJ-0W-RXP"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="57F-5L-xPh"/>
-                    <connections>
-                        <outlet property="carousel" destination="9G4-8U-IVg" id="0i1-H9-FT2"/>
-                        <segue destination="ZcS-Ek-iM0" kind="push" identifier="segueNotes" id="CTs-V4-Qcx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EBS-P3-uhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1621" y="1538"/>
-        </scene>
-        <!--Web View View Controller-->
-        <scene sceneID="K6f-JJ-Xoe">
-            <objects>
-                <viewController id="ZcS-Ek-iM0" customClass="MSUWebViewViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Xcz-Rb-Nfn">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABp-xB-emr">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ZcS-Ek-iM0" id="QRV-y7-QX2"/>
-                                </connections>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ABp-xB-emr" firstAttribute="top" secondItem="Xcz-Rb-Nfn" secondAttribute="top" type="default" id="43x-VF-vYL"/>
-                            <constraint firstItem="ABp-xB-emr" firstAttribute="leading" secondItem="Xcz-Rb-Nfn" secondAttribute="leading" type="default" id="7Qw-zQ-Wdh"/>
-                            <constraint firstItem="ABp-xB-emr" firstAttribute="trailing" secondItem="Xcz-Rb-Nfn" secondAttribute="trailing" type="default" id="LrH-wB-98I"/>
-                            <constraint firstItem="ABp-xB-emr" firstAttribute="bottom" secondItem="Xcz-Rb-Nfn" secondAttribute="bottom" type="default" id="bRW-l4-7zf"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="erV-PV-NtJ"/>
-                    <connections>
-                        <outlet property="webView" destination="ABp-xB-emr" id="rLX-iu-N4H"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCD-Cu-qQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2710" y="2138"/>
-        </scene>
     </scenes>
     <classes>
         <class className="MSUCarouselContainerView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MSUCarouselContainerView.h"/>
-        </class>
-        <class className="MSUCarouselViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSUCarouselViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
-            </relationships>
         </class>
         <class className="MSUDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MSUDetailViewController.h"/>
@@ -326,15 +186,10 @@
                 <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
             </relationships>
         </class>
-        <class className="MSUListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSUListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="table" candidateClass="UITableView"/>
-            </relationships>
-        </class>
         <class className="MSUMasterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MSUMasterViewController.h"/>
             <relationships>
+                <relationship kind="action" name="refreshView:" candidateClass="UIRefreshControl"/>
                 <relationship kind="outlet" name="table" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -349,14 +204,11 @@
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
-        <class className="MSUWebViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSUWebViewViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
         </class>
         <class className="iCarousel" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
@@ -371,7 +223,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="cDD-Ng-Q08"/>
-    </inferredMetricsTieBreakers>
 </document>
