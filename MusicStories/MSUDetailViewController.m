@@ -214,7 +214,7 @@
 
 - (NSString *) getPathForInstrumentPic : (NSUInteger) id
 {
-    NSArray *array = @[@"music_instruments.png", @"violin.png", @"viola.png"];
+    NSArray *array = @[@"music_instruments.png", @"violin.png", @"viola.png", @"royal.png"];
     if (id >= [array count])
         id = 0;
     return [array objectAtIndex:id];

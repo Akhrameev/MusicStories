@@ -77,6 +77,28 @@
 		DA9F34C6170E247B00CFBCA0 /* MSUCarouselContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9F34C5170E247B00CFBCA0 /* MSUCarouselContainerView.m */; };
 		DA9F34CC170E500D00CFBCA0 /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9F34CB170E500D00CFBCA0 /* OLGhostAlertView.m */; };
 		DA9F34D0170E5BC300CFBCA0 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9F34CF170E5BC300CFBCA0 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA9F34E8170F70D700CFBCA0 /* royal.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34D2170F70D700CFBCA0 /* royal.png */; };
+		DA9F34E9170F70D700CFBCA0 /* tyba.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34D3170F70D700CFBCA0 /* tyba.png */; };
+		DA9F34EA170F70D700CFBCA0 /* goboy.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34D4170F70D700CFBCA0 /* goboy.png */; };
+		DA9F34EB170F70D700CFBCA0 /* trombon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34D5170F70D700CFBCA0 /* trombon.png */; };
+		DA9F34EC170F70D700CFBCA0 /* cornet.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34D6170F70D700CFBCA0 /* cornet.png */; };
+		DA9F34ED170F70D700CFBCA0 /* tryba.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34D7170F70D700CFBCA0 /* tryba.png */; };
+		DA9F34EE170F70D700CFBCA0 /* nychelharba.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34D8170F70D700CFBCA0 /* nychelharba.png */; };
+		DA9F34EF170F70D700CFBCA0 /* viola_amoure.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34D9170F70D700CFBCA0 /* viola_amoure.png */; };
+		DA9F34F0170F70D700CFBCA0 /* agk_bass.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34DA170F70D700CFBCA0 /* agk_bass.png */; };
+		DA9F34F1170F70D700CFBCA0 /* cello.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34DB170F70D700CFBCA0 /* cello.png */; };
+		DA9F34F2170F70D700CFBCA0 /* violin2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34DC170F70D700CFBCA0 /* violin2.png */; };
+		DA9F34F3170F70D700CFBCA0 /* mandolin.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34DD170F70D700CFBCA0 /* mandolin.png */; };
+		DA9F34F4170F70D700CFBCA0 /* bouzouki.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34DE170F70D700CFBCA0 /* bouzouki.png */; };
+		DA9F34F5170F70D700CFBCA0 /* lytnya.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34DF170F70D700CFBCA0 /* lytnya.png */; };
+		DA9F34F6170F70D700CFBCA0 /* guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34E0170F70D700CFBCA0 /* guitar.png */; };
+		DA9F34F7170F70D700CFBCA0 /* gusli.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34E1170F70D700CFBCA0 /* gusli.png */; };
+		DA9F34F8170F70D700CFBCA0 /* oud.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34E2170F70D700CFBCA0 /* oud.png */; };
+		DA9F34F9170F70D700CFBCA0 /* domna.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34E3170F70D700CFBCA0 /* domna.png */; };
+		DA9F34FA170F70D700CFBCA0 /* balalaika.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34E4170F70D700CFBCA0 /* balalaika.png */; };
+		DA9F34FB170F70D700CFBCA0 /* arfa.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34E5170F70D700CFBCA0 /* arfa.png */; };
+		DA9F34FC170F70D700CFBCA0 /* gelifon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34E6170F70D700CFBCA0 /* gelifon.png */; };
+		DA9F34FD170F70D700CFBCA0 /* syzafon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9F34E7170F70D700CFBCA0 /* syzafon.png */; };
 		DAC98CE717087737005A9D73 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CE617087737005A9D73 /* MBProgressHUD.m */; };
 		DAC98CEF170877AE005A9D73 /* NSString+Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CEA170877AE005A9D73 /* NSString+Gender.m */; };
 		DAC98CF0170877AE005A9D73 /* Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CEC170877AE005A9D73 /* Vkontakte.m */; };
@@ -213,6 +235,28 @@
 		DA9F34CB170E500D00CFBCA0 /* OLGhostAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLGhostAlertView.m; sourceTree = "<group>"; };
 		DA9F34CE170E5BC300CFBCA0 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
 		DA9F34CF170E5BC300CFBCA0 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		DA9F34D2170F70D700CFBCA0 /* royal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = royal.png; sourceTree = "<group>"; };
+		DA9F34D3170F70D700CFBCA0 /* tyba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tyba.png; sourceTree = "<group>"; };
+		DA9F34D4170F70D700CFBCA0 /* goboy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goboy.png; sourceTree = "<group>"; };
+		DA9F34D5170F70D700CFBCA0 /* trombon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trombon.png; sourceTree = "<group>"; };
+		DA9F34D6170F70D700CFBCA0 /* cornet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cornet.png; sourceTree = "<group>"; };
+		DA9F34D7170F70D700CFBCA0 /* tryba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tryba.png; sourceTree = "<group>"; };
+		DA9F34D8170F70D700CFBCA0 /* nychelharba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nychelharba.png; sourceTree = "<group>"; };
+		DA9F34D9170F70D700CFBCA0 /* viola_amoure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viola_amoure.png; sourceTree = "<group>"; };
+		DA9F34DA170F70D700CFBCA0 /* agk_bass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agk_bass.png; sourceTree = "<group>"; };
+		DA9F34DB170F70D700CFBCA0 /* cello.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cello.png; sourceTree = "<group>"; };
+		DA9F34DC170F70D700CFBCA0 /* violin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = violin2.png; sourceTree = "<group>"; };
+		DA9F34DD170F70D700CFBCA0 /* mandolin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mandolin.png; sourceTree = "<group>"; };
+		DA9F34DE170F70D700CFBCA0 /* bouzouki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bouzouki.png; sourceTree = "<group>"; };
+		DA9F34DF170F70D700CFBCA0 /* lytnya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lytnya.png; sourceTree = "<group>"; };
+		DA9F34E0170F70D700CFBCA0 /* guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guitar.png; sourceTree = "<group>"; };
+		DA9F34E1170F70D700CFBCA0 /* gusli.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gusli.png; sourceTree = "<group>"; };
+		DA9F34E2170F70D700CFBCA0 /* oud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oud.png; sourceTree = "<group>"; };
+		DA9F34E3170F70D700CFBCA0 /* domna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = domna.png; sourceTree = "<group>"; };
+		DA9F34E4170F70D700CFBCA0 /* balalaika.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balalaika.png; sourceTree = "<group>"; };
+		DA9F34E5170F70D700CFBCA0 /* arfa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arfa.png; sourceTree = "<group>"; };
+		DA9F34E6170F70D700CFBCA0 /* gelifon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gelifon.png; sourceTree = "<group>"; };
+		DA9F34E7170F70D700CFBCA0 /* syzafon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = syzafon.png; sourceTree = "<group>"; };
 		DAC98CE517087737005A9D73 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		DAC98CE617087737005A9D73 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		DAC98CE9170877AE005A9D73 /* NSString+Gender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Gender.h"; sourceTree = "<group>"; };
@@ -314,6 +358,7 @@
 		DA5C145F16FF46ED002B8FAC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA9F34D1170F70BF00CFBCA0 /* InstrumentsPics */,
 				DA9B9AF81705C4780049B8A0 /* SampleIntroduction */,
 				DA5C14B61704C013002B8FAC /* MS-144.png */,
 				DA5C14B41704C008002B8FAC /* MS-72.png */,
@@ -324,10 +369,7 @@
 				DA5C146A16FF46ED002B8FAC /* Default.png */,
 				DA5C146C16FF46ED002B8FAC /* Default@2x.png */,
 				DA5C146E16FF46EE002B8FAC /* Default-568h@2x.png */,
-				DA5C14A517023B87002B8FAC /* music_instruments.png */,
 				DA5C14A617023B87002B8FAC /* page.png */,
-				DA5C14A717023B87002B8FAC /* viola.png */,
-				DA5C14A817023B87002B8FAC /* violin.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -534,6 +576,38 @@
 			name = ToastAlertView;
 			sourceTree = "<group>";
 		};
+		DA9F34D1170F70BF00CFBCA0 /* InstrumentsPics */ = {
+			isa = PBXGroup;
+			children = (
+				DA5C14A517023B87002B8FAC /* music_instruments.png */,
+				DA5C14A717023B87002B8FAC /* viola.png */,
+				DA5C14A817023B87002B8FAC /* violin.png */,
+				DA9F34D2170F70D700CFBCA0 /* royal.png */,
+				DA9F34D3170F70D700CFBCA0 /* tyba.png */,
+				DA9F34D4170F70D700CFBCA0 /* goboy.png */,
+				DA9F34D5170F70D700CFBCA0 /* trombon.png */,
+				DA9F34D6170F70D700CFBCA0 /* cornet.png */,
+				DA9F34D7170F70D700CFBCA0 /* tryba.png */,
+				DA9F34D8170F70D700CFBCA0 /* nychelharba.png */,
+				DA9F34D9170F70D700CFBCA0 /* viola_amoure.png */,
+				DA9F34DA170F70D700CFBCA0 /* agk_bass.png */,
+				DA9F34DB170F70D700CFBCA0 /* cello.png */,
+				DA9F34DC170F70D700CFBCA0 /* violin2.png */,
+				DA9F34DD170F70D700CFBCA0 /* mandolin.png */,
+				DA9F34DE170F70D700CFBCA0 /* bouzouki.png */,
+				DA9F34DF170F70D700CFBCA0 /* lytnya.png */,
+				DA9F34E0170F70D700CFBCA0 /* guitar.png */,
+				DA9F34E1170F70D700CFBCA0 /* gusli.png */,
+				DA9F34E2170F70D700CFBCA0 /* oud.png */,
+				DA9F34E3170F70D700CFBCA0 /* domna.png */,
+				DA9F34E4170F70D700CFBCA0 /* balalaika.png */,
+				DA9F34E5170F70D700CFBCA0 /* arfa.png */,
+				DA9F34E6170F70D700CFBCA0 /* gelifon.png */,
+				DA9F34E7170F70D700CFBCA0 /* syzafon.png */,
+			);
+			name = InstrumentsPics;
+			sourceTree = "<group>";
+		};
 		DAC98CE41708771F005A9D73 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,6 +746,28 @@
 				DA9B9B001705C4870049B8A0 /* SampleImage2.png in Resources */,
 				DA9B9B131705D3FB0049B8A0 /* Notes_crop.jpg in Resources */,
 				DA9B9B151705DB320049B8A0 /* SampleBackground.png in Resources */,
+				DA9F34E8170F70D700CFBCA0 /* royal.png in Resources */,
+				DA9F34E9170F70D700CFBCA0 /* tyba.png in Resources */,
+				DA9F34EA170F70D700CFBCA0 /* goboy.png in Resources */,
+				DA9F34EB170F70D700CFBCA0 /* trombon.png in Resources */,
+				DA9F34EC170F70D700CFBCA0 /* cornet.png in Resources */,
+				DA9F34ED170F70D700CFBCA0 /* tryba.png in Resources */,
+				DA9F34EE170F70D700CFBCA0 /* nychelharba.png in Resources */,
+				DA9F34EF170F70D700CFBCA0 /* viola_amoure.png in Resources */,
+				DA9F34F0170F70D700CFBCA0 /* agk_bass.png in Resources */,
+				DA9F34F1170F70D700CFBCA0 /* cello.png in Resources */,
+				DA9F34F2170F70D700CFBCA0 /* violin2.png in Resources */,
+				DA9F34F3170F70D700CFBCA0 /* mandolin.png in Resources */,
+				DA9F34F4170F70D700CFBCA0 /* bouzouki.png in Resources */,
+				DA9F34F5170F70D700CFBCA0 /* lytnya.png in Resources */,
+				DA9F34F6170F70D700CFBCA0 /* guitar.png in Resources */,
+				DA9F34F7170F70D700CFBCA0 /* gusli.png in Resources */,
+				DA9F34F8170F70D700CFBCA0 /* oud.png in Resources */,
+				DA9F34F9170F70D700CFBCA0 /* domna.png in Resources */,
+				DA9F34FA170F70D700CFBCA0 /* balalaika.png in Resources */,
+				DA9F34FB170F70D700CFBCA0 /* arfa.png in Resources */,
+				DA9F34FC170F70D700CFBCA0 /* gelifon.png in Resources */,
+				DA9F34FD170F70D700CFBCA0 /* syzafon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
