@@ -75,6 +75,8 @@
 		DA9B9BF6170624850049B8A0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9B9BF5170624850049B8A0 /* Security.framework */; };
 		DA9B9BF81706249A0049B8A0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9B9BF71706249A0049B8A0 /* MessageUI.framework */; };
 		DA9F34C6170E247B00CFBCA0 /* MSUCarouselContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9F34C5170E247B00CFBCA0 /* MSUCarouselContainerView.m */; };
+		DA9F34CC170E500D00CFBCA0 /* OLGhostAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9F34CB170E500D00CFBCA0 /* OLGhostAlertView.m */; };
+		DA9F34D0170E5BC300CFBCA0 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9F34CF170E5BC300CFBCA0 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DAC98CE717087737005A9D73 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CE617087737005A9D73 /* MBProgressHUD.m */; };
 		DAC98CEF170877AE005A9D73 /* NSString+Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CEA170877AE005A9D73 /* NSString+Gender.m */; };
 		DAC98CF0170877AE005A9D73 /* Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CEC170877AE005A9D73 /* Vkontakte.m */; };
@@ -207,6 +209,10 @@
 		DA9B9BF71706249A0049B8A0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		DA9F34C4170E247B00CFBCA0 /* MSUCarouselContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUCarouselContainerView.h; sourceTree = "<group>"; };
 		DA9F34C5170E247B00CFBCA0 /* MSUCarouselContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUCarouselContainerView.m; sourceTree = "<group>"; };
+		DA9F34CA170E500D00CFBCA0 /* OLGhostAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGhostAlertView.h; sourceTree = "<group>"; };
+		DA9F34CB170E500D00CFBCA0 /* OLGhostAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLGhostAlertView.m; sourceTree = "<group>"; };
+		DA9F34CE170E5BC300CFBCA0 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		DA9F34CF170E5BC300CFBCA0 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		DAC98CE517087737005A9D73 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		DAC98CE617087737005A9D73 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		DAC98CE9170877AE005A9D73 /* NSString+Gender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Gender.h"; sourceTree = "<group>"; };
@@ -329,6 +335,8 @@
 		DA5C147B16FF48E4002B8FAC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DA9F34CD170E5BA000CFBCA0 /* ToastAlertView */,
+				DA9F34C7170E4DF200CFBCA0 /* OldGhostAlertView */,
 				DAC98CE8170877AE005A9D73 /* Vkontakte */,
 				DAC98CE41708771F005A9D73 /* MBProgressHUD */,
 				DA9B9AED1705BF990049B8A0 /* IntroductionView */,
@@ -506,6 +514,24 @@
 				DA9B9AFC1705C4870049B8A0 /* SampleImage2.png */,
 			);
 			name = SampleIntroduction;
+			sourceTree = "<group>";
+		};
+		DA9F34C7170E4DF200CFBCA0 /* OldGhostAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				DA9F34CA170E500D00CFBCA0 /* OLGhostAlertView.h */,
+				DA9F34CB170E500D00CFBCA0 /* OLGhostAlertView.m */,
+			);
+			name = OldGhostAlertView;
+			sourceTree = "<group>";
+		};
+		DA9F34CD170E5BA000CFBCA0 /* ToastAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				DA9F34CE170E5BC300CFBCA0 /* Toast+UIView.h */,
+				DA9F34CF170E5BC300CFBCA0 /* Toast+UIView.m */,
+			);
+			name = ToastAlertView;
 			sourceTree = "<group>";
 		};
 		DAC98CE41708771F005A9D73 /* MBProgressHUD */ = {
@@ -714,6 +740,8 @@
 				DAC98D2A170B7258005A9D73 /* MSUWebViewController.m in Sources */,
 				DAC98D2E170BA6DD005A9D73 /* UIImage+rotate.m in Sources */,
 				DA9F34C6170E247B00CFBCA0 /* MSUCarouselContainerView.m in Sources */,
+				DA9F34CC170E500D00CFBCA0 /* OLGhostAlertView.m in Sources */,
+				DA9F34D0170E5BC300CFBCA0 /* Toast+UIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

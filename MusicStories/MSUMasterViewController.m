@@ -11,6 +11,7 @@
 #import "Compositor+Ext.h"
 #import "Composition+Ext.h"
 #import "Settings+Ext.h"
+#import "Toast+UIView.h"
 
 #define NEWS_URL @"https://s3.amazonaws.com/MusicNotes/config.json"
 #define DATE_URL @"https://s3.amazonaws.com/MusicNotes/date.txt"
@@ -181,10 +182,11 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    //alert view to show error to user, and stop visualizing refreshing on error
     [self.refreshControl endRefreshing];
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Network error" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
+    [self.view makeToast:@""
+                duration:2.0
+                position:@"bottom"
+                   title:@"Ошибка"];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -207,12 +209,11 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
     if (myError)
     {
-        //alert user about parse error and stop visualizing refreshing
         [self.refreshControl endRefreshing];
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Parse error" message:[myError description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [self.refreshControl endRefreshing];
-        
-        [alert show];
+        [self.view makeToast:@"Не удалось разобрать бормотание сервера"
+                    duration:3.0
+                    position:@"bottom"
+                       title:@"Ошибка!"];
         return;
     }
     NSNumber *date = [res objectForKey:@"date"];
@@ -239,11 +240,11 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:&myError];
     if (myError)
     {
-        //alert user about parse error and stop visualizing refreshing
         [self.refreshControl endRefreshing];
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Date parse error" message:[myError description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [self.refreshControl endRefreshing];
-        [alert show];
+        [self.view makeToast:@"Не удалось разобрать бормотание сервера"
+                    duration:3.0
+                    position:@"bottom"
+                       title:@"Ошибка!"];
         return;
     }
     [self.refreshControl endRefreshing];

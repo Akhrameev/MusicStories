@@ -9,21 +9,21 @@
          contextName = "-[MSUWebViewViewController configureNavigationBar]:MSUWebViewViewController.m">
       </ContextState>
       <ContextState
+         contextName = "-[MSUWebViewController viewDidLoad]:MSUWebViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[MSUListViewController connectionDidFinishLoading:]:MSUListViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "connection.currentRequest.URL">
+               value = "[connection description]">
             </PersistentString>
             <PersistentString
                value = "[[connection currentRequest] URL]">
             </PersistentString>
             <PersistentString
-               value = "[connection description]">
+               value = "connection.currentRequest.URL">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[MSUWebViewController viewDidLoad]:MSUWebViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[MSUSplitViewController prepareForSegue:sender:]:MSUSplitViewController.m">
@@ -40,6 +40,9 @@
          contextName = "-[VkData(Ext) photo]:VkData+Ext.m">
       </ContextState>
       <ContextState
+         contextName = "-[MSUWebViewController loadWebView]:MSUWebViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[MSUDetailViewController numberOfItemsInCarousel:]:MSUDetailViewController.m">
       </ContextState>
       <ContextState
@@ -49,9 +52,6 @@
                value = "self.view">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[MSUWebViewController loadWebView]:MSUWebViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[Vkontakte authenticate]:Vkontakte.m">
@@ -69,6 +69,17 @@
          <PersistentStrings>
             <PersistentString
                value = "[self.carousel viewWithTag:1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[OLGhostAlertView didRotate:]:OLGhostAlertView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[OLGhostAlertView didChangeScreenBounds]:OLGhostAlertView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame.origin.x">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -14,6 +14,7 @@
 #import "VkData+Ext.h"
 #import "UIImage+Resize.h"
 #import "UIImage+rotate.h"
+#import "Toast+UIView.h"
 
 @interface MSUWebViewController ()
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
@@ -126,11 +127,6 @@
             [Settings clearDataFromCacheForURL: self.instrument.url];
         return;
     }
-    if (alertView.tag == 4)
-    {
-        [self.spinner stopAnimating];
-        return;
-    }
 }
 
 - (void) reloadWebView: (id) sender
@@ -161,10 +157,11 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    //alert view to show error to user, and stop visualizing refreshing on error
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Network error" message:[error description] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert setTag:4];
-    [alert show];
+    [self.spinner stopAnimating];
+    [self.view makeToast:@""
+                duration:2.0
+                position:@"bottom"
+                   title:@"Ошибка!"];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -205,6 +202,10 @@
 - (void)vkontakteDidFailedWithError:(NSError *)error
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.view makeToast:@"Упс! Ошибка!"
+                duration:3.0
+                position:@"bottom"
+                   title:@"Вконтакте"];
 }
 
 - (void)showVkontakteAuthController:(UIViewController *)controller
@@ -217,29 +218,47 @@
 - (void)vkontakteAuthControllerDidCancelled
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.view makeToast:@""
+                duration:2.0
+                position:@"bottom"
+                   title:@"Отменено"];
 }
 
 - (void)vkontakteDidFinishLogin:(Vkontakte *)vkontakte
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     [self configureToolbar];
+    [self.view makeToast:@"Вход выполнен успешно!"
+                duration:3.0
+                position:@"bottom"
+                   title:@"Вконтакте"];
 }
 
 - (void)vkontakteDidFinishLogOut:(Vkontakte *)vkontakte
 {
     [self configureToolbar];
+    [self.view makeToast:@"Вы вышли из своей учётной записи."
+                duration:3.0
+                position:@"bottom"
+                   title:@"Вконтакте"];
 }
 
 - (void)vkontakteDidFinishGettinUserInfo:(NSDictionary *)info
 {
     NSLog(@"%@", info);
-    self.vkData = [Settings vkDataWithDict:info];
-    [self configureToolbar];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.vkData = [Settings vkDataWithDict:info];
+        [self configureToolbar];
+    });
 }
 
 - (void)vkontakteDidFinishPostingToWall:(NSDictionary *)responce
 {
     NSLog(@"%@", responce);
+    [self.view makeToast:@"Запись успешно опубликована!"
+                duration:3.0
+                position:@"bottom"
+                   title:@"Вконтакте"];
 }
 
 - (void) sendImageToVkontakte: (id) sender
