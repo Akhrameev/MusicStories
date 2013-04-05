@@ -251,7 +251,7 @@
 
 - (void)vkontakteDidFailedWithError:(NSError *)error
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)showVkontakteAuthController:(UIViewController *)controller
@@ -261,17 +261,17 @@
         controller.modalPresentationStyle = UIModalPresentationFormSheet;
     }
     
-    [self presentModalViewController:controller animated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)vkontakteAuthControllerDidCancelled
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)vkontakteDidFinishLogin:(Vkontakte *)vkontakte
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
     [self configureNavigationBar];
 }
 
