@@ -53,6 +53,11 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
         [self.table addSubview:self.refreshControl];
     }
     [self.refreshControl addTarget:self action:@selector(refreshView:) forControlEvents:UIControlEventValueChanged];
+    [[NSNotificationCenter defaultCenter]
+        addObserver:self
+        selector:@selector(deviceOrientationDidChangeNotification:)
+        name:UIDeviceOrientationDidChangeNotification
+        object:nil];
     if (![self.compositors count])
         [self updateCompositors];
 #ifdef AUTOLOAD_ON_START
@@ -106,6 +111,7 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     }
     isInitialSelection = 0;
     [self configureNavigationBar];
+    [self configureEmptyCompositorsTable];
     [super viewWillAppear:animated];
 }
 
@@ -262,6 +268,23 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    UITextView *textview = (UITextView *)[self.view viewWithTag:NSIntegerMax];
+    if (!textview)
+    {
+        textview = [[UITextView alloc] init];
+        [textview setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+        [textview setTag:NSIntegerMax];
+        [textview setUserInteractionEnabled:NO];
+        [textview setFont:[UIFont systemFontOfSize:16]];
+        [textview setTextAlignment:NSTextAlignmentCenter];
+        [textview setBackgroundColor:self.table.backgroundView.backgroundColor];
+        
+        [self.view addSubview:textview];
+    }
+    if ([self.compositors count])
+        [textview setText:@""];
+    else
+        [textview setText:@"Потяните для обновления списка композиций."];
     return [self.compositors count];
 }
 
@@ -350,6 +373,28 @@ enum requestType {REQUEST_TYPE_DATE, REQUEST_TYPE_COMPOSITORS};
     [self.table reloadData];
     [self.refreshControl beginRefreshing];
     [self refreshView: self.refreshControl];
+}
+
+- (void) configureEmptyCompositorsTable
+{
+    UITextView *view = (UITextView *)[self.view viewWithTag:NSIntegerMax];
+    if ([view.text isEqualToString:@""])
+    {
+        [view setFrame:CGRectMake(0, 0, 0, 0)];
+        return;
+    }
+    CGRect frame = [self.view frame];
+    if (frame.size.width >= 200)
+        frame.size.width = 200;
+    CGSize textSize = [view.text sizeWithFont:view.font constrainedToSize:frame.size lineBreakMode:NSLineBreakByWordWrapping];
+    frame.origin.y = (frame.size.height - textSize.height)/2;
+    frame.origin.x = (self.view.frame.size.width - textSize.width)/2;
+    view.frame = frame;
+}
+
+- (void)deviceOrientationDidChangeNotification:(NSNotification*)note
+{
+    [self configureEmptyCompositorsTable];
 }
 
 - (void) lastOpenedClick: (id) sender

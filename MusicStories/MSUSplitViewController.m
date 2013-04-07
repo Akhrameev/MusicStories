@@ -29,6 +29,7 @@
     [super viewDidLoad];
     //назначить DetailViewController делегатом этого класса
     self.delegate = (id)[[[self viewControllers] lastObject] topViewController];
+    [self setPresentsWithGesture: NO];
 	// Do any additional setup after loading the view.
 }
 
