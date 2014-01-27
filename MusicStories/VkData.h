@@ -25,4 +25,11 @@
 @property (nonatomic, retain) NSNumber * uid;
 @property (nonatomic, retain) Settings *linkSettings;
 
+- (UIImage *) photo;
+- (UIImage *) photoBig;
++ (void) save;
+@property (strong, nonatomic) NSURLConnection *urlconnection;
+@property (strong, nonatomic) NSMutableData *responseData;
+@property NSInteger currentRequestType;
+
 @end

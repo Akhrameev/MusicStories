@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DCD6684B12F49D6B39C6E2E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1742905308DC48FF8BA24762 /* libPods.a */; };
 		DA5C145916FF46ED002B8FAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5C145816FF46ED002B8FAC /* UIKit.framework */; };
 		DA5C145B16FF46ED002B8FAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5C145A16FF46ED002B8FAC /* Foundation.framework */; };
 		DA5C145D16FF46ED002B8FAC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5C145C16FF46ED002B8FAC /* CoreGraphics.framework */; };
@@ -105,7 +106,6 @@
 		DAC98CF1170877AE005A9D73 /* VkontakteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98CEE170877AE005A9D73 /* VkontakteViewController.m */; };
 		DAC98D13170A17EE005A9D73 /* VkData.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D12170A17EE005A9D73 /* VkData.m */; };
 		DAC98D16170A1801005A9D73 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D15170A1801005A9D73 /* Settings.m */; };
-		DAC98D19170A1891005A9D73 /* VkData+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D18170A1891005A9D73 /* VkData+Ext.m */; };
 		DAC98D1D170A2C9D005A9D73 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D1C170A2C9D005A9D73 /* UIImage+Resize.m */; };
 		DAC98D21170B715D005A9D73 /* MSUSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D20170B715D005A9D73 /* MSUSplitViewController.m */; };
 		DAC98D24170B71C4005A9D73 /* MSUMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC98D23170B71C4005A9D73 /* MSUMasterViewController.m */; };
@@ -115,6 +115,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1742905308DC48FF8BA24762 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5C145516FF46ED002B8FAC /* MusicStories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicStories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5C145816FF46ED002B8FAC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DA5C145A16FF46ED002B8FAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -269,8 +270,6 @@
 		DAC98D12170A17EE005A9D73 /* VkData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VkData.m; sourceTree = "<group>"; };
 		DAC98D14170A1801005A9D73 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		DAC98D15170A1801005A9D73 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
-		DAC98D17170A1891005A9D73 /* VkData+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VkData+Ext.h"; sourceTree = "<group>"; };
-		DAC98D18170A1891005A9D73 /* VkData+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VkData+Ext.m"; sourceTree = "<group>"; };
 		DAC98D1B170A2C9D005A9D73 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		DAC98D1C170A2C9D005A9D73 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		DAC98D1F170B715D005A9D73 /* MSUSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUSplitViewController.h; sourceTree = "<group>"; };
@@ -283,6 +282,7 @@
 		DAC98D29170B7258005A9D73 /* MSUWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUWebViewController.m; sourceTree = "<group>"; };
 		DAC98D2C170BA6DD005A9D73 /* UIImage+rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+rotate.h"; sourceTree = "<group>"; };
 		DAC98D2D170BA6DD005A9D73 /* UIImage+rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+rotate.m"; sourceTree = "<group>"; };
+		FA87BA2BCA0E4875AB3DB74D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +298,7 @@
 				DA5C145916FF46ED002B8FAC /* UIKit.framework in Frameworks */,
 				DA5C145B16FF46ED002B8FAC /* Foundation.framework in Frameworks */,
 				DA5C145D16FF46ED002B8FAC /* CoreGraphics.framework in Frameworks */,
+				5DCD6684B12F49D6B39C6E2E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +311,7 @@
 				DA5C147B16FF48E4002B8FAC /* Components */,
 				DA5C145716FF46ED002B8FAC /* Frameworks */,
 				DA5C145616FF46ED002B8FAC /* Products */,
+				FA87BA2BCA0E4875AB3DB74D /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -332,6 +334,7 @@
 				DA5C145816FF46ED002B8FAC /* UIKit.framework */,
 				DA5C145A16FF46ED002B8FAC /* Foundation.framework */,
 				DA5C145C16FF46ED002B8FAC /* CoreGraphics.framework */,
+				1742905308DC48FF8BA24762 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -530,8 +533,6 @@
 				DA5C16CE1704CA0D002B8FAC /* Settings+Ext.m */,
 				DA9B9ADC170568FE0049B8A0 /* CachedData+Ext.h */,
 				DA9B9ADD170568FE0049B8A0 /* CachedData+Ext.m */,
-				DAC98D17170A1891005A9D73 /* VkData+Ext.h */,
-				DAC98D18170A1891005A9D73 /* VkData+Ext.m */,
 			);
 			name = "Entities+Ext";
 			sourceTree = "<group>";
@@ -685,9 +686,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA5C147816FF46EE002B8FAC /* Build configuration list for PBXNativeTarget "MusicStories" */;
 			buildPhases = (
+				EA98B634D3374236961EA0A4 /* Check Pods Manifest.lock */,
 				DA5C145116FF46ED002B8FAC /* Sources */,
 				DA5C145216FF46ED002B8FAC /* Frameworks */,
 				DA5C145316FF46ED002B8FAC /* Resources */,
+				94E2E33C95B24B2994E8F793 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -778,6 +781,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		94E2E33C95B24B2994E8F793 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA98B634D3374236961EA0A4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DA5C145116FF46ED002B8FAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -833,7 +869,6 @@
 				DAC98CF1170877AE005A9D73 /* VkontakteViewController.m in Sources */,
 				DAC98D13170A17EE005A9D73 /* VkData.m in Sources */,
 				DAC98D16170A1801005A9D73 /* Settings.m in Sources */,
-				DAC98D19170A1891005A9D73 /* VkData+Ext.m in Sources */,
 				DAC98D1D170A2C9D005A9D73 /* UIImage+Resize.m in Sources */,
 				DAC98D21170B715D005A9D73 /* MSUSplitViewController.m in Sources */,
 				DAC98D24170B71C4005A9D73 /* MSUMasterViewController.m in Sources */,
@@ -928,6 +963,7 @@
 		};
 		DA5C147916FF46EE002B8FAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA87BA2BCA0E4875AB3DB74D /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -948,6 +984,7 @@
 		};
 		DA5C147A16FF46EE002B8FAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA87BA2BCA0E4875AB3DB74D /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

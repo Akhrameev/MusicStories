@@ -8,7 +8,7 @@
 
 #import "Settings+Ext.h"
 #import "CachedData+Ext.h"
-#import "VkData+Ext.h"
+#import "VkData.h"
 #import "NSString+Gender.h"
 
 @implementation Settings (Ext)

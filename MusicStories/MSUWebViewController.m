@@ -11,7 +11,7 @@
 #import "Settings+Ext.h"
 #import "Composition+Ext.h"
 #import "Compositor+Ext.h"
-#import "VkData+Ext.h"
+#import "VkData.h"
 #import "UIImage+Resize.h"
 #import "UIImage+rotate.h"
 #import "Toast+UIView.h"
