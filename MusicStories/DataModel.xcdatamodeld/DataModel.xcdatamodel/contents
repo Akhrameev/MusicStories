@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CachedData" representedClassName="CachedData" syncable="YES">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
@@ -43,11 +43,11 @@
         <relationship name="linkSettings" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Settings" inverseName="listVkData" inverseEntity="Settings" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CachedData" positionX="-360" positionY="36" width="128" height="88"/>
-        <element name="Composition" positionX="-351" positionY="-276" width="128" height="88"/>
-        <element name="Compositor" positionX="-99" positionY="-450" width="128" height="73"/>
-        <element name="Instrument" positionX="-81" positionY="-99" width="128" height="118"/>
-        <element name="Settings" positionX="-396" positionY="-135" width="128" height="133"/>
-        <element name="VkData" positionX="-605" positionY="-195" width="128" height="208"/>
+        <element name="CachedData" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Composition" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Compositor" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Instrument" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Settings" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="VkData" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
